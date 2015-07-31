@@ -1,0 +1,8 @@
+D:\合作项目\CoursePlatForm\CommonClassLibrary\bin\Debug\CommonClassLibrary.dll
+D:\合作项目\CoursePlatForm\CommonClassLibrary\bin\Debug\CommonClassLibrary.pdb
+D:\合作项目\CoursePlatForm\CommonClassLibrary\obj\Debug\CommonClassLibrary.dll
+D:\合作项目\CoursePlatForm\CommonClassLibrary\obj\Debug\CommonClassLibrary.pdb
+D:\合作项目\CoursePlatForm\CommonClassLibrary\obj\Debug\CommonClassLibrary.csprojResolveAssemblyReference.cache
+D:\合作项目\CoursePlatForm\CommonClassLibrary\bin\Debug\EntityFramework.dll
+D:\合作项目\CoursePlatForm\CommonClassLibrary\bin\Debug\Models.dll
+D:\合作项目\CoursePlatForm\CommonClassLibrary\bin\Debug\Models.pdb

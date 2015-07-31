@@ -1,0 +1,200 @@
+﻿@model Models.Tb_ApplyTable
+
+@{
+    ViewBag.Title = "ApplyTable";
+    Layout = "~/Views/Shared/SoftDown_Layout.cshtml";
+}
+
+@section span9{
+    @using (Html.BeginForm("ApplyTable", "SoftDown"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>填写软件捐赠申请表</legend>
+
+            <div class="editor-label">
+                单位名称  @Html.EditorFor(model => model.UnitNameCH)
+                @Html.ValidationMessageFor(model => model.UnitNameCH)
+            </div>
+            <div class="editor-field">
+                
+            </div>
+
+            <div class="editor-label">
+                单位英文名称 @Html.EditorFor(model => model.UnitNameEN)
+                @Html.ValidationMessageFor(model => model.UnitNameEN)
+            </div>
+            <div class="editor-field">
+                
+            </div>
+
+            <div class="editor-label">
+                单位负责人   @Html.EditorFor(model => model.ChargePerson)
+                @Html.ValidationMessageFor(model => model.ChargePerson)
+            </div>
+            <div class="editor-field">
+               
+            </div>
+
+            <div class="editor-label">
+                联系人 @Html.EditorFor(model => model.ContactPerson)
+                @Html.ValidationMessageFor(model => model.ContactPerson)
+            </div>
+            <div class="editor-field">
+               
+            </div>
+
+            <div class="editor-label">
+                电子信箱 @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                
+            </div>
+
+            <div class="editor-label">
+                电话
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Phone)
+                @Html.ValidationMessageFor(model => model.Phone)
+            </div>
+
+            <div class="editor-label">
+                单位地址
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.UnitAddress)
+                @Html.ValidationMessageFor(model => model.UnitAddress)
+            </div>
+
+            <div class="editor-label">
+                邮编
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ZipCode)
+                @Html.ValidationMessageFor(model => model.ZipCode)
+            </div>
+
+            <div class="editor-label">
+                单位简介
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model => model.UnitIntro)
+                @Html.ValidationMessageFor(model => model.UnitIntro)
+            </div>
+
+            <div class="editor-label">
+                教师人数
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TeacherNum)
+                @Html.ValidationMessageFor(model => model.TeacherNum)
+            </div>
+
+            <div class="editor-label">
+                在校生人数
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.StuNum)
+                @Html.ValidationMessageFor(model => model.StuNum)
+            </div>
+
+            <div class="editor-label">
+                2015年毕业生人数
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Gradu2015Num)
+                @Html.ValidationMessageFor(model => model.Gradu2015Num)
+            </div>
+
+            <div class="editor-label">
+                高级职称教师人数
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SeniorTitleNum)
+                @Html.ValidationMessageFor(model => model.SeniorTitleNum)
+            </div>
+
+            <div class="editor-label">
+                中级职称教师人数
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IntermediateTitleNum)
+                @Html.ValidationMessageFor(model => model.IntermediateTitleNum)
+            </div>
+
+            <div class="editor-label">
+                其他职称教师人数
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.OtherTitleNum)
+                @Html.ValidationMessageFor(model => model.OtherTitleNum)
+            </div>
+
+            <div class="editor-label">
+                信息技术专业教师人数
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TechTeacherNum)
+                @Html.ValidationMessageFor(model => model.TechTeacherNum)
+            </div>
+
+            <div class="editor-label">
+                获得信息技术相关认证教师人数
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.AuthTechTeacherNum)
+                @Html.ValidationMessageFor(model => model.AuthTechTeacherNum)
+            </div>
+
+            <div class="editor-label">
+                专业计算机房面积
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EngineRoomArea)
+                @Html.ValidationMessageFor(model => model.EngineRoomArea)
+            </div>
+
+            <div class="editor-label">
+                计算机台数及基本配置
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ComputerNumConfig)
+                @Html.ValidationMessageFor(model => model.ComputerNumConfig)
+            </div>
+
+@*            <div class="editor-label">
+                @Html.LabelFor(model => model.RecordTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RecordTime)
+                @Html.ValidationMessageFor(model => model.RecordTime)
+            </div>*@
+            @Html.HiddenFor(model=>model.RecordTime)
+
+
+            <p>
+                <input type="submit" value="提交申请" />
+            </p>
+        </fieldset>
+    }
+}
+
+
+
+@section booterScript{
+    <script src="~/Content/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/Content/CenterUI/StudentUI.js"></script>
+
+    <script>
+        $(function () {
+
+        });
+    </script>
+
+}

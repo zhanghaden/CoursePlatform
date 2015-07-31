@@ -1,0 +1,35 @@
+﻿@model Models.Tb_SoftUser
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<head>
+    <title>登陆</title>
+    <!-- Bootstrap -->
+    <link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/assets/styles.css" rel="stylesheet" media="screen">
+     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="~/Content/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  </head>
+  <body id="login">
+    <div class="container">
+
+      <form class="form-signin" action="/SoftDown/Index" method="post">
+        <h2 class="form-signin-heading">请登录</h2>
+        <input type="text" id="UserName" name="UserName" class="input-block-level" placeholder="Email address">
+        <input type="password" id="PassWord" name="PassWord" class="input-block-level" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> 记住我
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">登录</button>
+      </form>
+
+    </div> <!-- /container -->
+    <script src="~/Content/vendors/jquery-1.9.1.min.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+  </body>
