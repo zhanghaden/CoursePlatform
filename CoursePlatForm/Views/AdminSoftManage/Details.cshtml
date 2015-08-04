@@ -1,0 +1,68 @@
+﻿@model Models.Tb_SoftList
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/SoftDownAdmin_Layout.cshtml";
+}
+@section  span9{
+
+<h2>软件详情</h2>
+
+<fieldset>
+    <legend>软件</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoftName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoftName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoftIntro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoftIntro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoftType)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoftType)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contest)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contest)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DownLink)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DownLink)
+    </div><p>
+    @Html.ActionLink("编辑", "Edit", new { id=Model.SoftID }) |
+    @Html.ActionLink("回到列表", "Index")
+</p>
+</fieldset>
+
+    }
+@section booterScript{
+
+    <script src="~/Content/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/DT_bootstrap.js"></script>
+
+    <script src="~/Content/assets/scripts.js"></script>
+
+    <script>
+        $(function () {
+
+        });
+    </script>
+}

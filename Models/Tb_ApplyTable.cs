@@ -17,6 +17,10 @@
         public string UnitAddress { get; set; }
         public string ZipCode { get; set; }
         public string UnitIntro { get; set; }
+        [Display(Name = "教师数量")]
+        [Required(ErrorMessage = "请输入{0}")]
+        [StringLength(20, ErrorMessage = "{0}在{2}位至{1}位之间", MinimumLength = 1)]
+        [Range(20, 40)]
         public Nullable<int> TeacherNum { get; set; }
         public Nullable<int> StuNum { get; set; }
         public Nullable<int> Gradu2015Num { get; set; }

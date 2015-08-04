@@ -1,8 +1,7 @@
 ﻿@{
-    ViewBag.Title = "ApplyList";
-    Layout = "~/Views/Shared/SoftDownAdmin_Layout.cshtml";
+    ViewBag.Title = "软件列表";
+    Layout = "~/Views/Shared/SoftDown_Layout.cshtml";
 }
-
 
 
 @section  span9{
@@ -13,7 +12,7 @@
                 <!-- block -->
                 <div class="block">
                     <div class="navbar navbar-inner block-header">
-                        <div class="muted pull-left">申请列表</div>
+                        <div class="muted pull-left">申请表选择软件</div>
                     </div>
                     <div class="block-content collapse in">
                         <div class="span12">
@@ -36,11 +35,11 @@
                                 <thead>
                                     <tr>
                                         <th>序号</th>
-                                        <th>单位名称</th>
-                                        <th>单位负责人</th>
-                                        <th>电话</th>
-                                        <th>电子信箱</th>
-                                        <th>详细</th>
+                                        <th>软件名称</th>
+                                        <th>软件简介</th>
+                                        <th>软件类型</th>
+                                        <th>大赛名称</th>
+                                        <th>选择</th>
                                         @*                                                <th>实际人数</th>
                                                 <th>课程状态</th>
                                                  <th>编辑课程</th>
@@ -51,16 +50,16 @@
 
                                     @{
         int i = 1;
-        foreach (var item in (@ViewBag.ApplyTablelist as List<Models.Tb_ApplyTable>))
+        foreach (var item in (@ViewBag.listSoft as List<Models.Tb_SoftList>))
         {
                                         <tr class="odd gradeX">
                                             <td>@i</td>
-                                            <td>@item.UnitNameCH</td>
-                                            <td>@item.ChargePerson</td>
-                                            <td class="center">@item.Phone </td>
-                                            <td class="center">@item.Email</td>
+                                            <td>@item.SoftName</td>
+                                            <td>@item.SoftIntro</td>
+                                            <td class="center">@item.SoftType </td>
+                                            <td class="center">@item.Contest</td>
                                             <td>
-                                                <a class="btn btn-success" href="/SoftDown/ApplyDetail/@item.ApplyID">详情</a></td>
+                                                <input name="CheckSoft" type="checkbox" value="@item.SoftID" /></td>
                                         </tr>
             i++;
         }

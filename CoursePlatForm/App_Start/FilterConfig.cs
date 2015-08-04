@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using CoursePlatForm.Controllers;
+using System.Web;
 using System.Web.Mvc;
 
 namespace CoursePlatForm
@@ -8,6 +9,7 @@ namespace CoursePlatForm
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            //filters.Add(new CheckAccountAttribute());
         }
     }
 }

@@ -124,8 +124,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\CheckAccountAttribute.cs" />
+    <Compile Include="Controllers\SoftDown\AdminSoftManageController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
-    <Compile Include="Controllers\SoftDownController.cs" />
+    <Compile Include="Controllers\SoftDown\SoftDownController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1521,6 +1525,21 @@
     <Content Include="Views\SoftDown\Index.cshtml" />
     <Content Include="Views\SoftDown\AddSoftCourse.cshtml" />
     <Content Include="Views\SoftDown\SoftDownList.cshtml" />
+    <Content Include="Views\Test\AddSoftCourse.cshtml" />
+    <Content Include="Views\Test\ApplyDetail.cshtml" />
+    <Content Include="Views\Test\ApplyList.cshtml" />
+    <Content Include="Views\Test\ApplySuccess.cshtml" />
+    <Content Include="Views\Test\ApplyTable.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\SoftDownList.cshtml" />
+    <Content Include="Views\Test\SoftList.cshtml" />
+    <Content Include="Views\Test\SoftUse.cshtml" />
+    <Content Include="Views\Shared\SoftDownAdmin_Layout.cshtml" />
+    <Content Include="Views\AdminSoftManage\Index.cshtml" />
+    <Content Include="Views\AdminSoftManage\Details.cshtml" />
+    <Content Include="Views\AdminSoftManage\Create.cshtml" />
+    <Content Include="Views\AdminSoftManage\Edit.cshtml" />
+    <Content Include="Views\AdminSoftManage\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

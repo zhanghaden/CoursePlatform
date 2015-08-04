@@ -42,9 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="Input.cs" />
+    <Compile Include="MD5Helper.cs" />
     <Compile Include="MyPublic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TakeCookie.cs" />
@@ -55,6 +55,9 @@
       <Project>{b25f34e9-7592-4742-a7f6-68bbb24bdeeb}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CommonLibrary.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

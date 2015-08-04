@@ -11,7 +11,8 @@ using CommonClassLibrary;
 
 namespace CoursePlatForm.Controllers
 {
-    public class SoftDownController : Controller
+    [CheckAccount(Roles="admin")]
+    public class TestController : Controller
     {
 
         DBEntities db = new DBEntities();
@@ -160,12 +161,16 @@ namespace CoursePlatForm.Controllers
             ViewBag.SoftCourseList = querySoftCourseList;
             return View(applyTableModel);
         }
-
+        /// <summary>
+        /// 修改审核通过
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult ChangePass(int id)
         {
             if (id != 0)
             {
-                Tb_ApplyTable modelTable= db.Tb_ApplyTable.Find(id);
+                Tb_ApplyTable modelTable = db.Tb_ApplyTable.Find(id);
                 modelTable.IsPass = 1;
                 db.SaveChanges();
             }

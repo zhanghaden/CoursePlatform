@@ -1,10 +1,7 @@
 ﻿@{
-    ViewBag.Title = "ApplyList";
-    Layout = "~/Views/Shared/SoftDownAdmin_Layout.cshtml";
+    ViewBag.Title = "SoftUse";
+    Layout = "~/Views/Shared/SoftDown_Layout.cshtml";
 }
-
-
-
 @section  span9{
     @using (Html.BeginForm())
     {
@@ -13,34 +10,19 @@
                 <!-- block -->
                 <div class="block">
                     <div class="navbar navbar-inner block-header">
-                        <div class="muted pull-left">申请列表</div>
+                        <div class="muted pull-left">软件列表</div>
                     </div>
                     <div class="block-content collapse in">
                         <div class="span12">
-                            @*<div class="table-toolbar">
-                                      <div class="btn-group">
-                                         <a href="/CourseManage/CourseNew/"><button class="btn btn-success">Add New <i class="icon-plus icon-white"></i></button></a>
-                                      </div>
-
-                                      <div class="btn-group pull-right">
-                                         <button data-toggle="dropdown" class="btn dropdown-toggle">其他课程 <span class="caret"></span></button>
-                                         <ul class="dropdown-menu">
-                                            <li><a href="#">课程一</a></li>
-                                            <li><a href="#">课程二</a></li>
-                                            <li><a href="#">课程三</a></li>
-                                         </ul>
-                                      </div>
-                                   </div>*@
-
+                            <input type="hidden" name="hideSoftsIDs" id="hideSoftsIDs" value="@ViewBag.dict" />
                             <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
                                 <thead>
                                     <tr>
                                         <th>序号</th>
-                                        <th>单位名称</th>
-                                        <th>单位负责人</th>
-                                        <th>电话</th>
-                                        <th>电子信箱</th>
-                                        <th>详细</th>
+                                        <th>拟申请软件编号及名称</th>
+                                        <th>计划使用获赠软件开设的课程名称</th>
+                                        <th>计划培养学生数</th>
+                                        <th>申请套数</th>
                                         @*                                                <th>实际人数</th>
                                                 <th>课程状态</th>
                                                  <th>编辑课程</th>
@@ -48,19 +30,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     @{
+                                        
         int i = 1;
-        foreach (var item in (@ViewBag.ApplyTablelist as List<Models.Tb_ApplyTable>))
+        foreach (string item in @ViewBag.softs)
         {
                                         <tr class="odd gradeX">
+
                                             <td>@i</td>
-                                            <td>@item.UnitNameCH</td>
-                                            <td>@item.ChargePerson</td>
-                                            <td class="center">@item.Phone </td>
-                                            <td class="center">@item.Email</td>
+                                            <td>@item</td>
                                             <td>
-                                                <a class="btn btn-success" href="/SoftDown/ApplyDetail/@item.ApplyID">详情</a></td>
+                                                <input id="CourseName&@item" name="CourseName&@item" type="text" /></td>
+                                            <td class="center">
+                                                <input id="StuNum&@item" name="StuNum&@item" type="text" /></td>
+                                            <td class="center">
+                                                <input id="ApplyNum&@item" name="ApplyNum&@item" type="text" /></td>
                                         </tr>
             i++;
         }
@@ -79,9 +63,12 @@
             </div>
         </div>
     }
+
+    @*    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@
 }
 @section booterScript{
-
     <script src="~/Content/vendors/jquery-1.9.1.js"></script>
     <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
     <script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>

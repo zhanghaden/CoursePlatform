@@ -3,3 +3,8 @@ D:\合作项目\CoursePlatForm\Models\bin\Debug\Models.pdb
 D:\合作项目\CoursePlatForm\Models\bin\Debug\EntityFramework.dll
 D:\合作项目\CoursePlatForm\Models\obj\Debug\Models.dll
 D:\合作项目\CoursePlatForm\Models\obj\Debug\Models.pdb
+D:\CoursePlatform\CoursePlatform\Models\bin\Debug\Models.dll
+D:\CoursePlatform\CoursePlatform\Models\bin\Debug\Models.pdb
+D:\CoursePlatform\CoursePlatform\Models\bin\Debug\EntityFramework.dll
+D:\CoursePlatform\CoursePlatform\Models\obj\Debug\Models.dll
+D:\CoursePlatform\CoursePlatform\Models\obj\Debug\Models.pdb
