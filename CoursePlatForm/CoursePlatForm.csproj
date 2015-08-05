@@ -127,6 +127,7 @@
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\CheckAccountAttribute.cs" />
     <Compile Include="Controllers\Default1Controller.cs" />
+    <Compile Include="Controllers\Designer\bianji\Default1Controller.cs" />
     <Compile Include="Controllers\SoftDown\AdminSoftManageController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\SoftDown\SoftDownController.cs" />
@@ -1540,6 +1541,11 @@
     <Content Include="Views\SoftDown\EditSoftCourse.cshtml" />
     <Content Include="Views\SoftDown\SoftCourseList.cshtml" />
     <Content Include="Views\SoftDown\CreateSelectSoft.cshtml" />
+    <Content Include="Views\Default1\Index.cshtml" />
+    <Content Include="Views\Default1\Details.cshtml" />
+    <Content Include="Views\Default1\Create.cshtml" />
+    <Content Include="Views\Default1\Edit.cshtml" />
+    <Content Include="Views\Default1\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

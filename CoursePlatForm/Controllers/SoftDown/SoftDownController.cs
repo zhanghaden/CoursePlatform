@@ -49,6 +49,7 @@ namespace CoursePlatForm.Controllers
             ApplyTable.RecordTime = DateTime.Today;
             ApplyTable.UserID = int.Parse(TakeCookie.GetCookie("userId"));
             ApplyTable.IsPass = 0;
+            //ModelState.IsValid用于
             if (ModelState.IsValid)
             {
                 if (mHelp.Add<Tb_ApplyTable>(ApplyTable) > 0)
