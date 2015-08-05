@@ -53,6 +53,9 @@
     <Compile Include="Tb_SoftCourse.cs" />
     <Compile Include="Tb_SoftList.cs" />
     <Compile Include="Tb_SoftUser.cs" />
+    <Compile Include="Tb_City.cs" />
+    <Compile Include="Tb_ManageUser.cs" />
+    <Compile Include="Tb_StuUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
