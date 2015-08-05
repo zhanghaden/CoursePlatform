@@ -1,6 +1,4 @@
-﻿@model Models.Tb_ApplySoftList
-
-@{
+﻿@{
     ViewBag.Title = "ApplySuccess";
     Layout = "~/Views/Shared/SoftDown_Layout.cshtml";
 }
@@ -8,19 +6,22 @@
 
 @section  span9{
     已经提交申请，请等待审核
+    @{
+        if (ViewBag.appID != null)
+        {
+        <text>@Html.ActionLink("编辑申请表", "EditApplyTable", new { id = @ViewBag.appID })
+        @Html.ActionLink("申请表详情", "ApplyDetail", new { id = @ViewBag.appID })
+        @Html.ActionLink("所申请下载软件列表", "ApplyedSoftList", new { id = @ViewBag.appID })
+        @Html.ActionLink("所添加课程列表", "SoftCourseList", new { id = @ViewBag.appID })
+        </text>
+        }
     }
+}
 @section booterScript{
 
     <script src="~/Content/vendors/jquery-1.9.1.js"></script>
     <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
     <script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>
     <script src="~/Content/assets/DT_bootstrap.js"></script>
-
     <script src="~/Content/assets/scripts.js"></script>
-
-    <script>
-        $(function () {
-
-        });
-    </script>
 }

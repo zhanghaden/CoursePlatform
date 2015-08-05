@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplyDetail.cs" />
     <Compile Include="DbEntities.cs" />
     <Compile Include="ModelHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

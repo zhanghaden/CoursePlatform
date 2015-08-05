@@ -1,0 +1,75 @@
+﻿@model Models.Tb_ApplySoftList
+
+@{
+    ViewBag.Title = "DeleteApplySoftList";
+    Layout = "~/Views/Shared/SoftDown_Layout.cshtml";
+}
+@section  span9{
+
+
+    <h3>你想要删除吗</h3>
+    <fieldset>
+        <legend>软件项删除</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.SoftCourseName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.SoftCourseName)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.TrainNumPerYear)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TrainNumPerYear)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ApplyNum)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ApplyNum)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.ApplyID)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ApplyID)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.SoftID)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.SoftID)
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <p>
+                <input type="submit" value="删除" />
+                |
+        @Html.ActionLink("返回列表", "ApplyedSoftList")
+            </p>}
+    </fieldset>
+
+
+}
+@section booterScript{
+
+    <script src="~/Content/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/DT_bootstrap.js"></script>
+
+    <script src="~/Content/assets/scripts.js"></script>
+
+    <script>
+        $(function () {
+
+        });
+    </script>
+}
+

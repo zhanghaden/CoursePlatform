@@ -1,0 +1,74 @@
+﻿@model Models.Tb_ApplySoftList
+
+@{
+    ViewBag.Title = "添加软件";
+    Layout = "~/Views/Shared/SoftDown_Layout.cshtml";
+}
+@section  span9{
+<h2>添加新的软件</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Tb_ApplySoftList</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SoftCourseName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SoftCourseName)
+            @Html.ValidationMessageFor(model => model.SoftCourseName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TrainNumPerYear)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TrainNumPerYear)
+            @Html.ValidationMessageFor(model => model.TrainNumPerYear)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ApplyNum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ApplyNum)
+            @Html.ValidationMessageFor(model => model.ApplyNum)
+        </div>
+        <input type="hidden" name="ApplyID" value="@ViewBag.appID" />
+
+        <div class="editor-label">
+            选择软件
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SoftID", null, new { style = "width:150px;" })
+        </div>
+        
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+}
+@section booterScript{
+
+    <script src="~/Content/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/DT_bootstrap.js"></script>
+
+    <script src="~/Content/assets/scripts.js"></script>
+
+    <script>
+        $(function () {
+
+        });
+    </script>
+}

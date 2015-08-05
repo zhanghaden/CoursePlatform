@@ -126,8 +126,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\CheckAccountAttribute.cs" />
+    <Compile Include="Controllers\Default1Controller.cs" />
     <Compile Include="Controllers\SoftDown\AdminSoftManageController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\SoftDown\SoftDownController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1521,25 +1521,25 @@
     <Content Include="Views\SoftDown\SoftUse.cshtml" />
     <Content Include="Views\SoftDown\ApplySuccess.cshtml" />
     <Content Include="Views\SoftDown\ApplyList.cshtml" />
-    <Content Include="Views\SoftDown\ApplyDetail.cshtml" />
+    <Content Include="Views\SoftDown\AdminApplyDetail.cshtml" />
     <Content Include="Views\SoftDown\Index.cshtml" />
     <Content Include="Views\SoftDown\AddSoftCourse.cshtml" />
     <Content Include="Views\SoftDown\SoftDownList.cshtml" />
-    <Content Include="Views\Test\AddSoftCourse.cshtml" />
-    <Content Include="Views\Test\ApplyDetail.cshtml" />
-    <Content Include="Views\Test\ApplyList.cshtml" />
-    <Content Include="Views\Test\ApplySuccess.cshtml" />
-    <Content Include="Views\Test\ApplyTable.cshtml" />
-    <Content Include="Views\Test\Index.cshtml" />
-    <Content Include="Views\Test\SoftDownList.cshtml" />
-    <Content Include="Views\Test\SoftList.cshtml" />
-    <Content Include="Views\Test\SoftUse.cshtml" />
     <Content Include="Views\Shared\SoftDownAdmin_Layout.cshtml" />
     <Content Include="Views\AdminSoftManage\Index.cshtml" />
     <Content Include="Views\AdminSoftManage\Details.cshtml" />
     <Content Include="Views\AdminSoftManage\Create.cshtml" />
     <Content Include="Views\AdminSoftManage\Edit.cshtml" />
     <Content Include="Views\AdminSoftManage\Delete.cshtml" />
+    <Content Include="Views\SoftDown\EditApplyTable.cshtml" />
+    <Content Include="Views\SoftDown\ApplyedSoftList.cshtml" />
+    <Content Include="Views\SoftDown\ApplyDetail.cshtml" />
+    <Content Include="Views\SoftDown\EditApplySoftList.cshtml" />
+    <Content Include="Views\SoftDown\DeleteApplySoftList.cshtml" />
+    <Content Include="Views\SoftDown\CreateSoftCourse.cshtml" />
+    <Content Include="Views\SoftDown\EditSoftCourse.cshtml" />
+    <Content Include="Views\SoftDown\SoftCourseList.cshtml" />
+    <Content Include="Views\SoftDown\CreateSelectSoft.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

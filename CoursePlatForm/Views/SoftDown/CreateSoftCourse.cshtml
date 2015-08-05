@@ -1,0 +1,62 @@
+﻿@model Models.Tb_SoftCourse
+
+@{
+    ViewBag.Title = "添加新的课程";
+    Layout = "~/Views/Shared/SoftDown_Layout.cshtml";
+}
+
+@section  span9{
+    <h2>添加新的课程</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>添加新的课程</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CourseName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CourseName)
+                @Html.ValidationMessageFor(model => model.CourseName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SoftPlatform)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SoftPlatform)
+                @Html.ValidationMessageFor(model => model.SoftPlatform)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.StuNum)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.StuNum)
+                @Html.ValidationMessageFor(model => model.StuNum)
+            </div>
+
+            <input type="hidden" name="ApplyID" value="@ViewBag.appID" />
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+            <div>
+                @Html.ActionLink("回到列表", "SoftCourseList", new  {id=ViewBag.appID })
+            </div>
+        </fieldset>
+    }
+
+
+}
+@section booterScript{
+
+    <script src="~/Content/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/DT_bootstrap.js"></script>
+    <script src="~/Content/assets/scripts.js"></script>
+}
