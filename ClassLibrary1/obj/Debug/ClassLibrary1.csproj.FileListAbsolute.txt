@@ -1,0 +1,9 @@
+D:\CoursePlatform\CoursePlatform\ClassLibrary1\bin\Debug\ClassLibrary1.dll.config
+D:\CoursePlatform\CoursePlatform\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+D:\CoursePlatform\CoursePlatform\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+D:\CoursePlatform\CoursePlatform\ClassLibrary1\bin\Debug\EntityFramework.dll
+D:\CoursePlatform\CoursePlatform\ClassLibrary1\bin\Debug\EntityFramework.xml
+D:\CoursePlatform\CoursePlatform\ClassLibrary1\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\CoursePlatform\CoursePlatform\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+D:\CoursePlatform\CoursePlatform\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+D:\CoursePlatform\CoursePlatform\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

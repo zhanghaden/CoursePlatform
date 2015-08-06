@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoursePlatformModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CoursePlatformModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="CoursePlatformModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tb_ApplySoftList" EntityType="CoursePlatformModel.Store.Tb_ApplySoftList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tb_ApplyTable" EntityType="CoursePlatformModel.Store.Tb_ApplyTable" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tb_City" EntityType="CoursePlatformModel.Store.Tb_City" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tb_ManageUser" EntityType="CoursePlatformModel.Store.Tb_ManageUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tb_SoftCourse" EntityType="CoursePlatformModel.Store.Tb_SoftCourse" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tb_SoftList" EntityType="CoursePlatformModel.Store.Tb_SoftList" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tb_SoftUser" EntityType="CoursePlatformModel.Store.Tb_SoftUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tb_StuUser" EntityType="CoursePlatformModel.Store.Tb_StuUser" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tb_ApplySoftList">
+    <Key>
+      <PropertyRef Name="ApplySoftID" />
+    </Key>
+    <Property Name="ApplySoftID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SoftCourseName" Type="varchar" MaxLength="100" />
+    <Property Name="TrainNumPerYear" Type="int" />
+    <Property Name="ApplyNum" Type="int" />
+    <Property Name="ApplyID" Type="int" />
+    <Property Name="SoftID" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_ApplyTable">
+    <Key>
+      <PropertyRef Name="ApplyID" />
+    </Key>
+    <Property Name="ApplyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UnitNameCH" Type="varchar" MaxLength="50" />
+    <Property Name="UnitNameEN" Type="varchar" MaxLength="50" />
+    <Property Name="ChargePerson" Type="varchar" MaxLength="30" />
+    <Property Name="ContactPerson" Type="varchar" MaxLength="30" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="UnitAddress" Type="varchar" MaxLength="100" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="UnitIntro" Type="text" />
+    <Property Name="TeacherNum" Type="int" />
+    <Property Name="StuNum" Type="int" />
+    <Property Name="Gradu2015Num" Type="int" />
+    <Property Name="SeniorTitleNum" Type="int" />
+    <Property Name="IntermediateTitleNum" Type="int" />
+    <Property Name="OtherTitleNum" Type="int" />
+    <Property Name="TechTeacherNum" Type="int" />
+    <Property Name="AuthTechTeacherNum" Type="int" />
+    <Property Name="EngineRoomArea" Type="float" />
+    <Property Name="ComputerNumConfig" Type="varchar" MaxLength="100" />
+    <Property Name="RecordTime" Type="date" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="IsPass" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tb_City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="float" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="255" />
+    <Property Name="ParentID" Type="float" />
+    <Property Name="Level" Type="float" />
+    <Property Name="Upid" Type="nvarchar" MaxLength="255" />
+    <Property Name="ParentPath" Type="nvarchar" MaxLength="255" />
+    <Property Name="Note" Type="nvarchar" MaxLength="255" />
+    <Property Name="Area" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tb_ManageUser">
+    <Key>
+      <PropertyRef Name="ManageUserID" />
+    </Key>
+    <Property Name="ManageUserID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DeName" Type="varchar" MaxLength="150" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="DetailAddress" Type="varchar" MaxLength="150" />
+    <Property Name="RecordTime" Type="datetime" Nullable="false" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="IDCard" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="150" />
+    <Property Name="PostCode" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tb_SoftCourse">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="varchar" MaxLength="50" />
+    <Property Name="SoftPlatform" Type="varchar" MaxLength="100" />
+    <Property Name="StuNum" Type="int" />
+    <Property Name="ApplyID" Type="int" />
+  </EntityType>
+  <EntityType Name="Tb_SoftList">
+    <Key>
+      <PropertyRef Name="SoftID" />
+    </Key>
+    <Property Name="SoftID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SoftName" Type="varchar" MaxLength="50" />
+    <Property Name="SoftIntro" Type="text" />
+    <Property Name="SoftType" Type="varchar" MaxLength="30" />
+    <Property Name="Contest" Type="varchar" MaxLength="50" />
+    <Property Name="DownLink" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Tb_SoftUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="PassWord" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tb_StuUser">
+    <Key>
+      <PropertyRef Name="StuID" />
+    </Key>
+    <Property Name="StuID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StuName" Type="varchar" MaxLength="150" />
+    <Property Name="StuAge" Type="int" />
+    <Property Name="Account" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="DetailAddress" Type="varchar" MaxLength="150" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="IDCard" Type="varchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="150" />
+    <Property Name="PostCode" Type="varchar" MaxLength="50" />
+    <Property Name="RecordTime" Type="datetime" Nullable="false" />
+  </EntityType>
+</Schema>

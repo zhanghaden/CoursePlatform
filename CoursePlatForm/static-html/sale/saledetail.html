@@ -1,0 +1,438 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>购买</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script>
+        function go() {
+            window.location.href = "first.html";
+        }
+    </script>
+    <link href="../bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="../vendors/jquery-1.7.2.min.js"></script>
+    <!-- Include the Etalage files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/etalage.css">
+    <script src="js/jquery.etalage.min.js"></script>
+    <!-- Include the Etalage files -->
+    <script>
+        jQuery(document).ready(function ($) {
+
+            $('#etalage').etalage({
+                thumb_image_width: 300,
+                thumb_image_height: 400,
+
+                show_hint: true,
+                click_callback: function (image_anchor, instance_id) {
+                    alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+                }
+            });
+            // This is for the dropdown list example:
+            $('.dropdownlist').change(function () {
+                etalage_show($(this).find('option:selected').attr('class'));
+            });
+
+        });
+    </script>
+    <!----//details-product-slider--->
+    <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="header_bg">
+    <img src="../images/banner-logo.png" alt=""/>
+</div>
+<!-- start header -->
+<div class="header_btm">
+    <div class="wrap">
+        <div class="header_sub">
+            <div class="h_menu">
+                <ul>
+                    <li ><a href="index.html">首页</a></li>
+                    <li ><a href="about.html">关于我们</a></li>
+                    <li class="active"><a href="classlist.html">课程列表</a></li>
+                    <li><a href="#">软件下载</a></li>
+
+                </ul>
+            </div>
+            <div class="header-bottom-right">
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li class="mycart"><span class="active-icon c1" href="#">我的订单 </span>
+
+                        <div class="rate">3</div>
+                        <ul class="sub-icon1 list">
+                            <h3>最近加入(3)</h3>
+
+                            <div class="shopping_cart">
+                                <div class="cart_box">
+                                    <div class="message">
+                                        <div class="alert-close"></div>
+                                        <div class="list_img">
+                                            <img src="images/1.jpg" class="img-responsive" alt=""/>
+                                        </div>
+                                        <div class="list_desc">
+                                            <h4><a href="#">新能源小车</a></h4>
+                                            1 x<span
+                                                class="actual">
+		                             ￥20000</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="cart_box">
+                                    <div class="message1">
+                                        <div class="alert-close1"></div>
+                                        <div class="list_img">
+                                            <img src="images/2.jpg" class="img-responsive" alt=""/>
+                                        </div>
+                                        <div class="list_desc">
+                                            <h4><a href="#">新能源小车A</a></h4>
+                                            1 x<span
+                                                class="actual">
+		                             ￥600</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="cart_box1">
+                                    <div class="message2">
+                                        <div class="alert-close2"></div>
+                                        <div class="list_img">
+                                            <img src="images/3.jpg" class="img-responsive" alt=""/>
+                                        </div>
+                                        <div class="list_desc">
+                                            <h4><a href="#">新能源小车B</a></h4>
+                                            1 x<span
+                                                class="actual">
+		                             ￥1200</span>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <div class="total_left">总计 :</div>
+                                <div class="total_right">￥21800</div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="login_buttons">
+                                <div class="check_button"><a href="#">结算</a></div>
+                                <div class="login_button"><a href="login.html">登录</a></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="saledetail">
+<div class="about_top">
+    <div class="wrap">
+        <div class="container-fluid">
+            <div class="dreamcrub">
+                <ul class="breadcrumbs">
+                    <li class="home">
+                        <a href="index.html" title="Go to Home Page">首页</a>
+                        <span>&gt;</span>
+                    </li>
+                    <li class="home">&nbsp;
+                        产品&nbsp;
+                        <span>&gt;</span>
+                    </li>
+                    <li class="women">
+                        产品详情
+                    </li>
+                </ul>
+                <ul class="previous">
+                    <li><a href="javascript :;" onClick="javascript :history.back(-1);">返回上一页</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="row-fluid">
+
+                <div class="span3">
+                    <ul class="menu1">
+                        <li class="item1"><a href="#" class="">课程类型分类<img class="arrow-img" src="images/arrow.png"
+                                                                          alt=""/> </a>
+                        </li>
+                    </ul>
+                    <div class="box1">
+                        <ul class="box1_list">
+                            <li><a href="#"><h3>所有</h3></a></li>
+                            <li><a href="#">精品课程</a></li>
+                            <li><a href="#">专栏课程</a></li>
+                            <li><a href="#">优秀课题赏析</a></li>
+                        </ul>
+                    </div>
+                    <ul class="menu1">
+                        <li class="item1"><a href="#" class="">STEM分类<img class="arrow-img" src="images/arrow.png"
+                                                                          alt=""/> </a>
+                        </li>
+                    </ul>
+                    <div class="box1">
+                        <ul class="box1_list">
+                            <li><a href="#"><h3>所有</h3></a></li>
+                            <li><a href="#">科学</a></li>
+                            <li><a href="#">技术</a></li>
+                            <li><a href="#">工程</a></li>
+                            <li><a href="#">数学</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="span9 content_right">
+                    <div class="row-fluid">
+                    <div class="singel_right">
+                        <div class="labout">
+                            <!-- start product_slider -->
+                            <ul id="etalage">
+                                <li>
+                                    <img class="etalage_thumb_image" src="images/s1.jpg" class="img-responsive"/>
+                                    <img class="etalage_source_image" src="images/s1.jpg" class="img-responsive"/>
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="images/s2.jpg" class="img-responsive"/>
+                                    <img class="etalage_source_image" src="images/s2.jpg" class="img-responsive"/>
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="images/s3.jpg" class="img-responsive"/>
+                                    <img class="etalage_source_image" src="images/s3.jpg" class="img-responsive"/>
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="images/s4.jpg" class="img-responsive"/>
+                                    <img class="etalage_source_image" src="images/s4.jpg" class="img-responsive"/>
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="images/s5.jpg" class="img-responsive"/>
+                                    <img class="etalage_source_image" src="images/s5.jpg" class="img-responsive"/>
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="images/s1.jpg" class="img-responsive"/>
+                                    <img class="etalage_source_image" src="images/s1.jpg" class="img-responsive"/>
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="images/s2.jpg" class="img-responsive"/>
+                                    <img class="etalage_source_image" src="images/s2.jpg" class="img-responsive"/>
+                                </li>
+                                <div class="clearfix"></div>
+                            </ul>
+                            <!-- end product_slider -->
+                        </div>
+                        <div class="cont1 span5">
+                            <h1> 新能源小车</h1>
+                            <ul class="rating">
+                                <li><a class="product-rate" href="#"> </a> <span> </span></li>
+                                <li><a href="#">所需设备:3D打印机 新能源电池模具</a></li>
+                                <div class="clearfix"></div>
+                            </ul>
+                            <div class="price_single">
+                                <span class="reducedfrom">￥20000</span>
+                                <span class="actual">￥10000</span>
+                            </div>
+                            <h2 class="quick">简介</h2>
+
+                            <p class="quick_desc"> 适合年龄:6-10<br>
+                                所需设备: 3D打印机 新能源电池模具<br>
+                            </p>
+                            <ul class="size">
+                                <h3>版本分类</h3>
+                                <li><a href="#">完整版</a></li>
+                                <li><a href="#">精简版</a></li>
+                                <li><a href="#">速成版</a></li>
+                            </ul>
+                            <ul class="size">
+                                <h3>学时数</h3>
+                                <li><a href="#">32</a></li>
+                                <li><a href="#">34</a></li>
+                            </ul>
+                            <ul class="product-qty">
+                                <span>数量:</span>
+                                <select style="height: 35px; line-height: 20px;">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                </select>
+                            </ul>
+                            <div class="btn_form">
+
+                                <form>
+
+                                    <input type="button" value="我想购买！" title="" onclick="{location.href='service.html'}" style="cursor: pointer;
+border: none;outline: none;display: inline-block;font-size: 1em;padding: 13px 20px;background: #4dbce9;color: #FFF;text-transform: uppercase;">
+
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="sap_tabs">
+                        <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                            <ul class="resp-tabs-list">
+                                <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>商品描述</span></li>
+                                <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>详情</span></li>
+                                <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>累计评价</span></li>
+                                <div class="clear"></div>
+                            </ul>
+                            <div class="resp-tabs-container">
+                                <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                                    <div class="facts">
+                                        <ul class="tab_list">
+                                            <li><a href="#"> 适合年龄:5-10<br>
+                                                所需设备: 3D打印机 新能源电池模具<br>
+                                            </a></li>
+                                            <li>
+                                                本产品旨在建立完整的课程体系以有针对性的提高学习者某些特定方面的素质，并能够培养学习者在实际问题解决或创造活动中能够自主有序的完成整个问题解决或创造活动的能力。
+                                            </li>
+                                            <li>
+                                                本产品旨在建立完整的课程体系以有针对性的提高学习者某些特定方面的素质，并能够培养学习者在实际问题解决或创造活动中能够自主有序的完成整个问题解决或创造活动的能力。
+                                            </li>
+                                            <li>
+                                                本产品旨在建立完整的课程体系以有针对性的提高学习者某些特定方面的素质，并能够培养学习者在实际问题解决或创造活动中能够自主有序的完成整个问题解决或创造活动的能力。
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+                                    <div class="facts">
+                                        <ul class="tab_list">
+                                            <li>
+                                                本产品旨在建立完整的课程体系以有针对性的提高学习者某些特定方面的素质，并能够培养学习者在实际问题解决或创造活动中能够自主有序的完成整个问题解决或创造活动的能力。
+                                            </li>
+                                            <li>
+                                                本产品旨在建立完整的课程体系以有针对性的提高学习者某些特定方面的素质，并能够培养学习者在实际问题解决或创造活动中能够自主有序的完成整个问题解决或创造活动的能力。
+                                            </li>
+                                            <li>
+                                                本产品旨在建立完整的课程体系以有针对性的提高学习者某些特定方面的素质，并能够培养学习者在实际问题解决或创造活动中能够自主有序的完成整个问题解决或创造活动的能力。
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
+                                    <div class="facts">
+                                        <ul class="tab_list">
+                                            <li>好，有创造性</li>
+                                            <li>挺好的挺好的，有创造性</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="like">猜你还喜欢</h3>
+                        <ul id="flexiselDemo3">
+                            <li><img src="images/pic4.jpg" width="237" height="137" class="img-responsive"/>
+
+                                <div class="grid-flex"><a href="#">新能源小车</a>
+
+                                    <p>Rs 850</p></div>
+                            </li>
+                            <li><img src="images/pic4.jpg" width="237" height="137" class="img-responsive"/>
+
+                                <div class="grid-flex"><a href="#">新能源小车</a>
+
+                                    <p>Rs 1050</p></div>
+                            </li>
+                            <li><img src="images/pic4.jpg" width="237" height="137" class="img-responsive"/>
+
+                                <div class="grid-flex"><a href="#">新能源小车</a>
+
+                                    <p>Rs 990</p></div>
+                            </li>
+                            <li><img src="images/pic4.jpg" width="237" height="137" class="img-responsive"/>
+
+                                <div class="grid-flex"><a href="#">新能源小车</a>
+
+                                    <p>Rs 850</p></div>
+                            </li>
+                            <li><img src="images/pic4.jpg" width="237" height="137" class="img-responsive"/>
+
+                                <div class="grid-flex"><a href="#">新能源小车</a>
+
+                                    <p>Rs 870</p></div>
+                            </li>
+                        </ul>
+                        <script type="text/javascript">
+                            $(window).load(function () {
+                                $("#flexiselDemo3").flexisel({
+                                    visibleItems: 3,
+                                    animationSpeed: 1000,
+                                    autoPlay: true,
+                                    autoPlaySpeed: 3000,
+                                    pauseOnHover: true,
+                                    enableResponsiveBreakpoints: true,
+                                    responsiveBreakpoints: {
+                                        portrait: {
+                                            changePoint: 480,
+                                            visibleItems: 1
+                                        },
+                                        landscape: {
+                                            changePoint: 640,
+                                            visibleItems: 2
+                                        },
+                                        tablet: {
+                                            changePoint: 768,
+                                            visibleItems: 3
+                                        }
+                                    }
+                                });
+
+                            });
+                        </script>
+                        <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+<div class="copy">
+    <p><img src="../images/novtt-logo.png" alt="" width="256px"/> © 2015 All rights reserved.. </p>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.icon1 li.mycart').click(function () {
+            if ($('.icon1 ul').attr('class')=='sub-icon1 list show') {
+                $('.icon1 li ul').attr('class','sub-icon1 list');
+            } else {
+                $('.icon1 li ul').attr('class','sub-icon1 list show');
+            }
+        });
+        $(document).click(function(){
+            $('.icon1 li.mycart').click(function(){
+                return false;
+            });
+            $('.icon1 li ul').attr('class','sub-icon1 list');
+        });/*第一次点击无效，第二次点击后正常，点击我的订单弹出，点击空白处消失*/
+        /*$(document).click(function(event) {
+         if (!$(event.target).closest("li.mycart, .icon1 ul")) {
+         $('.icon1 li ul').attr('class','sub-icon1 list');
+         }
+         });*/
+
+    });
+</script>
+</body>
+</html>		

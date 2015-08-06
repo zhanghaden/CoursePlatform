@@ -1,0 +1,138 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher学生动态</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/elements.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/icons.css" />
+
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="../stylesheet/yshq/courselist.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../stylesheet/yshq/multiple.css" type="text/css" media="screen" />
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- scripts -->
+    <script src="../vendors/jquery-1.9.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../javascript/yshq/theme.js"></script>
+    <script src="../javascript/yshq/jquery.easy-pie-chart.js"></script>
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <a class="brand" href="index.html">
+                <img src="../images/logo.png" alt="" /></a>
+            <ul class="nav pull-right">
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-envelope-alt"></i>&nbsp;&nbsp;通知
+                    </a>
+
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign" style="color: #dadada;"></i></a>
+
+                            <div class="messages">
+                                <a href="#" class="item">
+                                    <div class="name">通知</div>
+                                    <div class="msg">
+                                        通知1:您的课程已更新成功！
+                                    </div>
+                                </a>
+                                <a href="#" class="item">
+                                    <div class="name">站内信</div>
+                                    <div class="msg">
+                                        站内信1.您好，您于2015.07.08 11:39 登录本系统。
+                                    </div>
+                                </a>
+
+                                <div class="footer">
+                                    <a href="#" class="logout">查看所有</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">我的账户
+                    <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="personal-info.html">个人信息</a></li>
+                    </ul>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="signin.html" role="button">
+                        <i class="icon-share-alt"></i>&nbsp;&nbsp;注销
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+
+
+    <!-- main container -->
+    <div class="content">
+        <div class="multi-content">
+          
+            <div class="block">
+            <div class="navbar navbar-inner block-header">
+                            <div class="muted pull-left" style="color: black">论坛讨论</div>
+                            <div class="pull-right">
+                                <span class="badge badge-info">3</span>
+
+                            </div>
+                        </div>
+            <div class="tab-pane" id="Div1">
+                
+                <div class="alert alert-success">
+                    <button class="close" data-dismiss="alert">×</button>
+                    <strong>论坛讨论</strong>
+                    <ul>
+                        <p>很多报警系统还配有与控制器相连的内置无线电接收器和便携式钥匙链无线电发送器。在下文中，我们将了解这些组件在保安装置中所起的作用.多数汽车报警系统都配有可以挂在钥匙链上的无线电发送器。通过这种装置，可以向控制器发送指令，对报警系统进行遥控。汽车报警系统上的无线电发射器与无线电遥控玩具的工作原理相同。它通过无线电波脉冲调制发送特定的信号。钥匙链发送器最主要的作用就是开关报警系统。您离开车辆关上车门后，可按下按钮启动报警系统；您返回车辆时，同样也只需要轻轻按一下就能将其关闭。在多数系统中，启动或解除车辆报警系统时，控制器会发出指令，闪烁车灯，鸣响喇叭。这样是便于让您及周围的人知道报警系统已经启动。</p>
+                    </ul>
+                </div>
+                </div>
+                </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+                <!-- end main container -->
+                <script>
+                    $(function () {
+                        // Easy pie charts
+                        $('.chart').easyPieChart({ animate: 1000 });
+                    });
+                </script>
+</body>
+</html>

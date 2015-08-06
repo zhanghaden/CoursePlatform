@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher个人信息</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/elements.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/icons.css" />
+
+    <!-- libraries -->
+    <link href="../stylesheet/lilei/font-awesome.css" type="text/css" rel="stylesheet" />
+
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="../stylesheet/lilei/lilei-personal-info.css" type="text/css" media="screen" />
+
+    <!-- open sans font -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- scripts -->
+    <!-- scripts -->
+    <script src="../vendors/jquery-1.9.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../javascript/yshq/theme.js"></script>
+
+</head>
+<body>
+
+<!-- navbar -->
+<div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+        <a class="brand" href="index.html"><img src="../images/logo.png" alt=""/></a>
+        <ul class="nav pull-right">
+            <li class="notification-dropdown hidden-phone">
+                <a href="#" class="trigger">
+                    <i class="icon-envelope-alt"></i>&nbsp;&nbsp;通知
+                </a>
+                <div class="pop-dialog">
+                    <div class="pointer right">
+                        <div class="arrow"></div>
+                        <div class="arrow_border"></div>
+                    </div>
+                    <div class="body">
+                        <a href="#" class="close-icon"><i class="icon-remove-sign" style="color:#dadada;"></i></a>
+                        <div class="messages">
+                            <a href="#" class="item">
+                                <div class="name">通知</div>
+                                <div class="msg">
+                                    通知1:您的课程已更新成功！
+                                </div>
+                            </a>
+                            <a href="#" class="item">
+                                <div class="name">站内信</div>
+                                <div class="msg">
+                                    站内信1.您好，您于2015.07.08 11:39 登录本系统。
+                                </div>
+                            </a>
+                            <div class="footer">
+                                <a href="#" class="logout">查看所有</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                    我的账户
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="personal-info.html">个人信息</a></li>
+                </ul>
+            </li>
+            <li class="settings hidden-phone">
+                <a href="signin.html" role="button">
+                    <i class="icon-share-alt"></i>&nbsp;&nbsp;注销
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end navbar -->
+<div>
+<!-- sidebar -->
+<!--<div id="sidebar-nav" style="float: left;">
+    <ul id="dashboard-menu">
+        <li>
+            <a href="#">
+                <i class="icon-home"></i>
+                <span>首页</span>
+            </a>
+        </li>
+        <li>
+            <a href="courselist.html">
+                <i class="icon-th-large"></i>
+                <span>课程列表</span>
+            </a>
+        </li>
+        <li>
+            <a href="multiple.html">
+                <i class="icon-code-fork"></i>
+                <span>综合</span>
+            </a>
+        </li>
+        <li>
+            <a href="studentlist.html">
+                <i class="icon-group"></i>
+                <span>学生列表</span>
+            </a>
+        </li>
+        <li>
+            <a href="studentstate.html">
+                <i class="icon-group"></i>
+                <span>学生动态</span>
+            </a>
+        </li>
+        <li>
+            <a href="gradechart.html">
+                <i class="icon-signal"></i>
+                <span>成绩图表</span>
+            </a>
+        </li>
+        <li class="active">
+            <a href="personal-info.html">
+                <i class="icon-cog"></i>
+                <span>个人信息</span>
+            </a>
+        </li>
+    </ul>
+</div>-->
+
+    <div id="sidebar-nav">
+    <ul id="dashboard-menu">
+        <li>
+            <a href="teacher_control.html">
+                <i class="icon-home"></i>
+                <span>教师互动</span>
+            </a>
+        </li>
+        <li>
+            <a href="studentlist.html">
+                <i class="icon-group"></i>
+                <span>学生列表</span>
+            </a>
+        </li>
+        <!--<li>
+            <a href="studentstate.html">
+                <i class="icon-group"></i>
+                <span>学生动态</span>
+            </a>
+        </li>-->
+        <li>
+            <a href="gradechart.html">
+                <i class="icon-signal"></i>
+                <span>成绩统计</span>
+            </a>
+        </li>
+        <li>
+            <a href="personal-info.html">
+                <i class="icon-cog"></i>
+                <span>个人信息</span>
+            </a>
+        </li>
+        <li>
+            <a href="appraise.html">
+                <i class="icon-cog"></i>
+                <span>评价量表</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- end sidebar -->
+
+	<!-- main container .wide-content is used for this layout without sidebar :)  -->
+    <div class="content"  style="float: left;">
+        <div class="container-fluid">
+            <div class="settings-wrapper" id="pad-wrapper">
+                <!-- avatar column -->
+                <div class="span3 avatar-box">
+                    <div class="personal-image">
+                        <img src="../images/personal-info.png" class="avatar img-circle" />
+                        <p style="margin-left: 15px;">姓名：老师</p>
+                        <p style="margin-left: 15px;">职称：教授</p>
+                    </div>
+                </div>
+
+                <!-- edit form column -->
+                <div class="span7 personal-info">
+                    <div class="alert alert-info">
+                        老师您好！欢迎进入个人信息页面！
+                    </div>
+                    <h5 class="personal-title">个人信息</h5>
+
+                    <form />
+                        <div class="field-box">
+                            <label>姓名：</label>
+                            <input class="span5 inline-input" type="text" value="老师" />
+                        </div>
+                        <div class="field-box">
+                            <label>学校或工作单位</label>
+                            <input class="span5 inline-input" type="text" value="天津师范大学" />
+                        </div>
+                        <div class="field-box">
+                            <label>性别</label>
+                            <input class="span5 inline-input" type="text" value="女" />
+                        </div>
+                        <div class="field-box">
+                            <label>出生年月：</label>
+                            <input class="span5 inline-input" type="text" value="1956年10月" />
+                        </div>
+                        <div class="field-box">
+                            <label>邮箱：</label>
+                            <input class="span5 inline-input" type="text" value="sigete@gmail.com" />
+                        </div>
+                        <div class="field-box">
+                            <label>昵称：</label>
+                            <input class="span5 inline-input" type="text" value="alegalvan" />
+                        </div>
+                        <div class="field-box">
+                            <label>密码：</label>
+                            <input class="span5 inline-input" type="password" value="blablablabla" />
+                        </div>
+                        <div class="field-box">
+                            <label>确认密码：</label>
+                            <input class="span5 inline-input" type="password" value="blablablabla" />
+                        </div>
+                        <div class="span6 field-box actions">
+                            <input type="button" class="btn-glow primary" value="保存修改" />
+                            <span>  </span>
+                            <input type="reset" value="取消" class="reset" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end main container -->
+</div>
+
+
+</body>
+</html>

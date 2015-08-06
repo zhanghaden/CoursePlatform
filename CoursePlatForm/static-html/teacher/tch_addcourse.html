@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher添加课程</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/elements.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/icons.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/beike.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/elements.css" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="../stylesheet/yshq/courselist.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../stylesheet/yshq/multiple.css" type="text/css" media="screen" />
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- scripts -->
+   
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../javascript/yshq/theme.js"></script>
+
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <ul class="nav pull-right">
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-envelope-alt"></i>&nbsp;&nbsp;通知
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign" style="color:#dadada;"></i></a>
+                            <div class="messages">
+                                <a href="#" class="item">
+                                    <div class="name">通知</div>
+                                    <div class="msg">
+                                        通知1:您的课程已更新成功！
+                                    </div>
+                                </a>
+                                <a href="#" class="item">
+                                    <div class="name">站内信</div>
+                                    <div class="msg">
+                                        站内信1.您好，您于2015.07.08 11:39 登录本系统。
+                                    </div>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">查看所有</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                        我的账户
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="personal-info.html">个人信息</a></li>
+                    </ul>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="signin.html" role="button">
+                        <i class="icon-share-alt"></i>&nbsp;&nbsp;注销
+                    </a>
+                </li>
+            </ul>
+             <a class="brand teachertp">教师界面</a>
+            <ul class="nav">
+                <li>
+                    <a href="../manual/teacher.html">首页</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">快速导航<b class="caret"></b>
+
+                    </a>
+                    <ul class="dropdown-menu" id="menu1">
+                        <li>
+                            <a href="tch_instructmanual.html">教师备课</a>
+
+                        </li>
+                        <li >
+                            <a href="tstu_do_scene.html">教师上课</a>
+
+                        </li>
+
+                        <li>
+                            <a href="../manual/teacher_control.html">教师管理</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+           
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <!--<div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <li class="active">
+                <a href="tch_instructmanual.html">
+                    <i class="icon-th-large"></i>
+                    <span>教学手册</span>
+                </a>
+            </li>
+            <li>
+                <a href="../student/stu_do_scene.html">
+                    <i class="icon-th-large"></i>
+                    <span>标准教案</span>
+                </a>
+            </li>
+            <li>
+                <a href="tch_lessonplan_tkn.html">
+                    <i class="icon-th-large"></i>
+                    <span>我的教案</span>
+                </a>
+            </li>
+           
+        </ul>
+    </div>-->
+    <!-- end sidebar -->
+
+
+    <!-- main container -->
+
+
+    <div class="multi-content">
+
+
+        <!-- morris stacked chart -->
+        <div class="row-fluid">
+
+
+            <!--/span-->
+            <div class="span12" id="content">
+
+                <div class="row-fluid">
+                    <!-- block -->
+
+                    <!-- block -->
+                    <div class="block">
+                        <div class="block">
+                            <div class="navbar-inner-manualbar block-header">
+                                <div class="muted pull-left">课程管理</div>
+                            </div>
+                            <div class="block-content collapse in">
+                                <div class="span12">
+                                    <form class="form-horizontal">
+                                        <fieldset>
+                                            <legend>新建课程</legend>
+                                            <div class="control-group">
+                                                <label class="control-label" for="typeahead">课程名称 </label>
+                                                <div class="controls">
+                                                    <input type="text" class="span6" id="typeahead" data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
+                                                    <p class="help-block">填入课程的完整名称！</p>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="date01">开课日期</label>
+                                                <div class="controls">
+                                                    <input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
+                                                    <p class="help-block">课程开始的时间，具体到天！</p>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="optionsCheckbox">是否共享</label>
+                                                <div class="controls">
+                                                    <label class="uniform">
+                                                        <input class="uniform_on" type="checkbox" id="optionsCheckbox" value="option1">
+                                                        课程资源是否分享？
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="select01">课程状态</label>
+                                                <div class="controls">
+                                                    <select id="select01" class="chzn-select">
+                                                        <option>正在建设</option>
+                                                        <option>建设完毕</option>
+                                                        <option>维修中</option>
+                                                        <option>关闭课程</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="multiSelect">选择班级</label>
+                                                <div class="controls">
+                                                    <select multiple="multiple" id="multiSelect" class="chzn-select span4">
+                                                        <option>小学一年级</option>
+                                                        <option>小学二年级</option>
+                                                        <option>小学三年级</option>
+                                                        <option>小学四年级</option>
+                                                        <option>小学五年级</option>
+                                                        <option>小学六年级</option>
+                                                        <option>初中一年级</option>
+                                                        <option>初中二年级</option>
+                                                        <option>初中三年级</option>
+                                                        <option>初中四年级</option>
+                                                        
+                                                    </select>
+                                                    <p class="help-block">可以选择多个班级</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="fileInput">课程资源</label>
+                                                <div class="controls">
+                                                    <input class="input-file uniform_on" id="fileInput" type="file">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="textarea2">课程内容</label>
+                                                <div class="controls">
+                                                    <textarea class="input-xlarge textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <button type="submit" class="btn btn-primary">保存课程</button>
+                                                <button type="reset" class="btn">取消</button>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /block -->
+                </div>
+
+                <div class="row-fluid">
+                    <!-- block -->
+
+                    <!-- block -->
+                    <div class="block">
+                        <div class="navbar navbar-inner block-header">
+                            <div class="muted pull-left">小测试</div>
+                        </div>
+                        <div class="block-content collapse in">
+                            <div class="span12">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /block -->
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!-- block -->
+
+        <!-- /block -->
+    </div>
+
+
+
+    <!-- wizard -->
+
+    <!-- /wizard -->
+
+    <!-- validation -->
+
+    <!-- /validation -->
+
+
+
+    <link href="../vendors/datepicker.css" rel="stylesheet" media="screen">
+    <link href="../vendors/uniform.default.css" rel="stylesheet" media="screen">
+    <link href="../vendors/chosen.min.css" rel="stylesheet" media="screen">
+
+    <link href="../vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
+
+    <script src="../vendors/jquery-1.9.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendors/jquery.uniform.min.js"></script>
+    <script src="../vendors/chosen.jquery.min.js"></script>
+    <script src="../vendors/bootstrap-datepicker.js"></script>
+
+    <script src="../vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
+    <script src="../vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
+
+    <script src="../vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <script type="text/javascript" src="../vendors/jquery-validation/dist/jquery.validate.min.js"></script>
+     <script src="../assets/form-validation.js"></script>
+  
+    <script src="../assets/scripts.js"></script>
+    
+    <script>
+
+        jQuery(document).ready(function () {
+            FormValidation.init();
+        });
+
+
+        $(function () {
+            $(".datepicker").datepicker();
+            $(".uniform_on").uniform();
+            $(".chzn-select").chosen(); 
+            $('.textarea').wysihtml5();
+
+            $('#rootwizard').bootstrapWizard({
+                onTabShow: function (tab, navigation, index) {
+                    var $total = navigation.find('li').length;
+                    var $current = index + 1;
+                    var $percent = ($current / $total) * 100;
+                    $('#rootwizard').find('.bar').css({ width: $percent + '%' });
+                    // If it's the last tab then hide the last button and show the finish instead
+                    if ($current >= $total) {
+                        $('#rootwizard').find('.pager .next').hide();
+                        $('#rootwizard').find('.pager .finish').show();
+                        $('#rootwizard').find('.pager .finish').removeClass('disabled');
+                    } else {
+                        $('#rootwizard').find('.pager .next').show();
+                        $('#rootwizard').find('.pager .finish').hide();
+                    }
+                }
+            });
+            $('#rootwizard .finish').click(function () {
+                //alert('Finished!, Starting over!');
+                $('#rootwizard').find("a[href*='tab1']").trigger('click');
+                location.href = "stu_do_design.html";
+            });
+        });
+
+    </script>
+    <!-- end main container -->
+
+
+
+
+</body>
+</html>
