@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher 课程列表</title>
+
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheet/yshq/multiple.css" type="text/css" media="screen" />
+    <!-- bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/elements.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/icons.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/beike.css" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="../stylesheet/yshq/courselist.css" type="text/css" media="screen" />
+    
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- scripts -->
+   
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../javascript/yshq/theme.js"></script>
+    <script src="../vendors/jquery.uniform.min.js"></script>
+    <link href="../vendors/datepicker.css" rel="stylesheet" media="screen">
+    <link href="../vendors/uniform.default.css" rel="stylesheet" media="screen">
+    <link href="../vendors/chosen.min.css" rel="stylesheet" media="screen">
+
+    <link href="../vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
+
+    <script src="../vendors/jquery-1.9.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendors/jquery.uniform.min.js"></script>
+    <script src="../vendors/chosen.jquery.min.js"></script>
+    <script src="../vendors/bootstrap-datepicker.js"></script>
+
+    <script src="../vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
+    <script src="../vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
+
+    <script src="../vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <script type="text/javascript" src="../vendors/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../assets/form-validation.js"></script>
+
+    <script src="../assets/scripts.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            FormValidation.init();
+        });
+       
+
+        $(function () {
+            $(".datepicker").datepicker();
+            $(".uniform_on").uniform();
+            $(".chzn-select").chosen();
+            $('.textarea').wysihtml5();
+
+            $('#rootwizard').bootstrapWizard({
+                onTabShow: function (tab, navigation, index) {
+                    var $total = navigation.find('li').length;
+                    var $current = index + 1;
+                    var $percent = ($current / $total) * 100;
+                    $('#rootwizard').find('.bar').css({ width: $percent + '%' });
+                    // If it's the last tab then hide the last button and show the finish instead
+                    if ($current >= $total) {
+                        $('#rootwizard').find('.pager .next').hide();
+                        $('#rootwizard').find('.pager .finish').show();
+                        $('#rootwizard').find('.pager .finish').removeClass('disabled');
+                    } else {
+                        $('#rootwizard').find('.pager .next').show();
+                        $('#rootwizard').find('.pager .finish').hide();
+                    }
+                }
+            });
+            $('#rootwizard .finish').click(function () {
+                alert('Finished!, Starting over!');
+                $('#rootwizard').find("a[href*='tab1']").trigger('click');
+            });
+        });
+
+    </script>
+    
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <ul class="nav pull-right">
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-envelope-alt"></i>&nbsp;&nbsp;通知
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign" style="color:#dadada;"></i></a>
+                            <div class="messages">
+                                <a href="#" class="item">
+                                    <div class="name">通知</div>
+                                    <div class="msg">
+                                        通知1:您的课程已更新成功！
+                                    </div>
+                                </a>
+                                <a href="#" class="item">
+                                    <div class="name">站内信</div>
+                                    <div class="msg">
+                                        站内信1.您好，您于2015.07.08 11:39 登录本系统。
+                                    </div>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">查看所有</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                        我的账户
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="personal-info.html">个人信息</a></li>
+                    </ul>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="../sale/login.html" role="button">
+                        <i class="icon-share-alt"></i>&nbsp;&nbsp;注销
+                    </a>
+                </li>
+            </ul>
+             <a class="brand teachertp">设计者界面</a>
+            <ul class="nav">
+                <li>
+                    <a href="design_courselist.html">首页</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">快速导航<b class="caret"></b>
+
+                    </a>
+                    <ul class="dropdown-menu" id="menu1">
+                        <li>
+                            <a href="tch_instructmanual.html">添加课程</a>
+
+                        </li>
+                        <li >
+                            <a href="design_learning_book.html">教学手册</a>
+
+                        </li>
+
+                        <li>
+                            <a href="../manual/teacher_control.html">标准教案</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+           
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <!-- <li>
+                <a href="#">
+                    <i class="icon-home"></i>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li >
+                <a href="design_courselist.html">
+                    <i class="icon-th-large"></i>
+                    <span>课程列表</span>
+                </a>
+            </li>-->
+            <li>
+                <a href="design_learning_book.html">
+                    <i class="icon-th-large"></i>
+                    <span>教学手册</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="design_lessonplan_tkn.html">
+                    <i class="icon-th-large"></i>
+                    <span>标准教案</span>
+                </a>
+            </li>
+           
+        </ul>
+    </div>
+    <!-- end sidebar -->
+
+
+    <!-- main container -->
+    <div class="content">
+
+        <div class="multi-content">
+
+
+            <!-- morris stacked chart -->
+            <div class="row-fluid">
+                <div class="span12">
+                    <!-- block -->
+                    <div class="block">
+                        <div class="navbar navbar-inner block-header">
+                            <div class="muted pull-left">知识测验
+                            </div>
+                        </div>
+                        <div class="block-content collapse in">
+                            <div class="span12-center">
+                                <form class="form-horizontal">
+                                    <fieldset id="fset">
+                                        <legend>添加知识测验</legend>
+                                        
+                                        <div class="control-group">
+                                            <label class="control-label" for="focusedInput">添加题目</label>
+                                            <div class="controls">
+                                                <textarea name="jianjie" class="span5"></textarea>
+                                            </div>
+
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="focusedInput">添加选项</label>
+                                            <div class="controls">
+                                                <input class="input-xlarge focused" id="Text1" type="text" value="A.">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                      
+                                            <div class="controls">
+                                                <input class="input-xlarge focused" id="Text2" type="text" value="B.">
+                                            </div>
+
+                                        </div>
+                                        <div class="control-group">
+                                          
+                                            <div class="controls">
+                                                <input class="input-xlarge focused" id="Text3" type="text" value="C.">
+                                            </div>
+
+                                        </div>
+                                        <div class="control-group">
+                                            
+                                            <div class="controls">
+                                                <input class="input-xlarge focused" id="Text4" type="text" value="D.">
+                                            </div>
+
+                                        </div>
+                                         <div class="control-group">
+                                            <label class="control-label" for="optionsCheckbox">是否多选</label>
+                                            <div class="controls">
+                                                <label class="uniform">
+                                              <input class="uniform_on" type="checkbox" id="Checkbox1" value="option1">
+                                            
+                                            </label>
+                                            </div>
+
+                                        </div>
+                                         <div class="control-group">
+                                            <label class="control-label" for="focusedInput">正确答案</label>
+                                            <div class="inline controls" >
+                                                <label>
+														<input type="checkbox" id="optionsCheckbox2" value="option1" >
+														A.ddddddddddddd
+													</label>
+                                                 <label>
+														<input type="checkbox" id="Checkbox2" value="option1" >
+														B.ddddddddddddd
+													</label>
+                                                 <label>
+														<input type="checkbox" id="Checkbox3" value="option1">
+														C.ddddddddddddd
+													</label>
+                                                 <label>
+														<input type="checkbox" id="Checkbox4" value="option1">
+														D.ddddddddddddd
+													</label>
+                                            </div>
+
+                                        </div>
+
+                                        
+
+                                        <div class="form-actions" id="sub">
+                                            <span class="span5">
+                                                <span class="btn btn-primary" onclick="window.open('lessonplan_designpractice.html')">添加题目</span>
+                                                <span class="btn btn-primary" onclick="window.open('lessonplan_designpractice.html')">测验知识列表</span>
+                                            </span>
+                                            <button type="submit" class="btn btn-primary">提交</button>
+                                            <button type="reset" class="btn">取消</button>
+
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- /block -->
+                </div>
+            </div>
+
+            <!-- block -->
+
+            <!-- /block -->
+        </div>
+
+
+
+        <!-- wizard -->
+
+        <!-- /wizard -->
+
+        <!-- validation -->
+
+        <!-- /validation -->
+
+
+    </div>
+
+
+
+    <!-- end main container -->
+
+
+
+
+</body>
+</html>

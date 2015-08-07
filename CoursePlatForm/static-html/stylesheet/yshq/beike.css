@@ -1,0 +1,71 @@
+﻿.span12-center {
+
+padding-top: 20px;
+padding-right: 80px;
+padding-bottom: 20px;
+padding-left: 45px;
+}
+.control-group-shouce {
+
+  
+  display: table;  
+  line-height: 0;  
+  content: "";
+  margin:auto;
+  margin-bottom:20px;
+}
+.control-label-first {
+  float: left;
+  width: 120px;
+  padding-top: 5px;
+  text-align: right;
+}
+.sidebar-design-width{
+  
+  width: 200px;
+
+}
+.manual_content {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 0px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      color: #0E0E0E;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+  border: 1px solid #DFF0D8;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.navbar-inner-manualbar {
+   
+    margin-bottom: 20px;
+  overflow: visible;
+     min-height: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #96BF48;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    background-repeat: repeat-x;
+     border: 1px solid #d4d4d4;
+   
+   
+}
+.manual_margint {
+   
+margin-top:40px;  
+}
+.navbar-inverse .teachertp {
+  color: #ffffff;
+}
+#sidebar-nav-left {
+    position: absolute;
+    width: 200px;
+    float: left;
+    margin: 0em;
+        margin-top: 0em;
+    margin-right: 0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    padding-top: 5.8em;
+}

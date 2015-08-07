@@ -3057,7 +3057,8 @@
     <Content Include="static-html\Web.config" />
     <Content Include="Views\Shared\Partial1.cshtml" />
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
-    <Content Include="Views\Shared\ViewPage1.cshtml" />
+    <Content Include="Views\Shared\LeftMenu_Partial.cshtml" />
+    <Content Include="Views\Index\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

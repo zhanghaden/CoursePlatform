@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>技术知识实践-情境</title>
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../assets/styles.css" rel="stylesheet" media="screen">
+    <!--[if lte IE 8]>
+    <script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">教师界面</a>
+
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i
+                                class="icon-user"></i>刘振源<i class="caret"></i>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a tabindex="-1" href="#">配置</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a tabindex="-1" href="../sale/login.html">退出</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav">
+                        <li>
+                            <a href="../manual/teacher.html">首页</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">快速导航 <b class="caret"></b>
+
+                            </a>
+                            <ul class="dropdown-menu" id="menu1">
+                                <li>
+                                    <a href="tch_instructmanual.html">教师备课</a>
+
+                                </li>
+                                <li>
+                                    <a href="tstu_do_scene.html">教师上课</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="../manual/teacher_control.html">教师管理</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3" id="sidebar">
+                <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
+
+                    <li>
+                        <a href="tstu_do_scene.html"><span class="badge badge-warning pull-right">5</span> 情境</a>
+                    </li>
+                    <li>
+                        <a href="tstu_do_innovation.html"><span class="badge badge-warning pull-right">5</span> 创意</a>
+                    </li>
+                    <li>
+                        <a href="tstu_do_design.html"><span class="badge badge-warning pull-right">5</span> 设计</a>
+                    </li>
+                    <li>
+                        <a href="tstu_do_analyze.html"><span class="badge badge-warning pull-right">5</span> 分析</a>
+                    </li>
+                    <li>
+                        <a href="tstu_do_make.html"><span class="badge badge-warning pull-right">5</span> 制作</a>
+                    </li>
+                    <li class="active">
+                        <a href="tstu_do_conclusion.html"><span class="badge badge-warning pull-right">5</span> 总结</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!--/span-->
+            <div class="span9" id="content">
+                <!-- wizard -->
+                <div class="row-fluid section">
+                    <!-- block -->
+                    <div class="block">
+                        <div class="navbar navbar-inner block-header">
+                            <div class="muted pull-left">活动</div>
+                        </div>
+                        <div class="block-content collapse in">
+                            <div class="span12">
+                                <div id="rootwizard">
+                                    <div class="navbar">
+                                        <div class="navbar-inner">
+                                            <div class="container">
+                                                <ul>
+                                                    <li><a href="#tab1" data-toggle="tab">活动一</a></li>
+                                                    <li><a href="#tab2" data-toggle="tab">活动二</a></li>
+                                                    <li><a href="#tab3" data-toggle="tab">活动三</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="bar" class="progress progress-striped active">
+                                        <div class="bar"></div>
+                                    </div>
+                                    <div class="tab-content">
+                                        <div class="tab-pane" id="tab1">
+                                            <h4>任务说明</h4>
+                                            <div class="alert alert-success">
+                                                <button class="close" data-dismiss="alert">×</button>
+                                                <strong>注意!</strong>
+                                                <ul>
+                                                    <li>1.1111111111111111111</li>
+                                                    <li>2.2222222222222222222</li>
+                                                    <li>3.3333333333333333333</li>
+                                                </ul>
+                                            </div>
+                                            <h4>任务内容</h4>
+
+                                            <form class="form">
+                                                <fieldset>
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="fileInput">提交作品</label>
+
+                                                        <div class="controls">
+                                                            <div class="uploader" id="uniform-fileInput">
+                                                                <input
+                                                                    class="input-file uniform_on" id="fileInput"
+                                                                    type="file"><span class="filename"
+                                                                        style="-webkit-user-select: none;">未选择文件</span><span
+                                                                            class="action"
+                                                                            style="-webkit-user-select: none;">选择文件</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="textarea2">发表评论</label>
+
+                                                        <div class="controls">
+                                                            <textarea class="input-xlarge textarea" placeholder="Enter text ..."
+                                                                style="width: 810px; height: 200px"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane" id="tab2">
+                                            <h4>任务说明</h4>
+                                            <div class="alert alert-success">
+                                                <button class="close" data-dismiss="alert">×</button>
+                                                <strong>注意!</strong>
+                                                <ul>
+                                                    <li>1.1111111111111111111</li>
+                                                    <li>2.2222222222222222222</li>
+                                                    <li>3.3333333333333333333</li>
+                                                </ul>
+                                            </div>
+                                            <form class="form-horizontal">
+                                                <fieldset>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane" id="tab3">
+                                            <h4>任务说明</h4>
+                                            <div class="alert alert-success">
+                                                <button class="close" data-dismiss="alert">×</button>
+                                                <strong>注意!</strong>
+                                                <ul>
+                                                    <li>1.1111111111111111111</li>
+                                                    <li>2.2222222222222222222</li>
+                                                    <li>3.3333333333333333333</li>
+                                                </ul>
+                                            </div>
+                                            <form class="form-horizontal">
+                                                <fieldset>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <ul class="pager wizard">
+                                            <li class="previous first" style="display: none;"><a href="javascript:void(0);">第一个</a>
+                                            </li>
+                                            <li class="previous"><a href="javascript:void(0);">上一个</a></li>
+                                            <li class="next last" style="display: none;"><a
+                                                href="javascript:void(0);">最后一个</a></li>
+                                            <li class="next"><a href="javascript:void(0);">下一个</a></li>
+                                            <li class="next finish" style="display: none;"><a href="javascript:;">完成</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /block -->
+                </div>
+                <!-- /wizard -->
+
+
+            </div>
+        </div>
+        <hr>
+        <footer>
+            <p>&copy; Vincent Gabriel 2013</p>
+        </footer>
+    </div>
+    <!--/.fluid-container-->
+    <link href="../vendors/datepicker.css" rel="stylesheet" media="screen">
+    <link href="../vendors/uniform.default.css" rel="stylesheet" media="screen">
+    <link href="../vendors/chosen.min.css" rel="stylesheet" media="screen">
+
+    <link href="../vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
+
+    <script src="../vendors/jquery-1.9.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../vendors/jquery.uniform.min.js"></script>
+    <script src="../vendors/chosen.jquery.min.js"></script>
+    <script src="../vendors/bootstrap-datepicker.js"></script>
+
+    <script src="../vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
+    <script src="../vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
+
+    <script src="../vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <script type="text/javascript" src="../vendors/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="../assets/form-validation.js"></script>
+
+    <script src="../assets/scripts.js"></script>
+    <script>
+
+        jQuery(document).ready(function () {
+            FormValidation.init();
+        });
+
+
+        $(function () {
+            $(".datepicker").datepicker();
+            $(".uniform_on").uniform();
+            $(".chzn-select").chosen();
+            $('.textarea').wysihtml5();
+
+            $('#rootwizard').bootstrapWizard({
+                onTabShow: function (tab, navigation, index) {
+                    var $total = navigation.find('li').length;
+                    var $current = index + 1;
+                    var $percent = ($current / $total) * 100;
+                    $('#rootwizard').find('.bar').css({ width: $percent + '%' });
+                    // If it's the last tab then hide the last button and show the finish instead
+                    if ($current >= $total) {
+                        $('#rootwizard').find('.pager .next').hide();
+                        $('#rootwizard').find('.pager .finish').show();
+                        $('#rootwizard').find('.pager .finish').removeClass('disabled');
+                    } else {
+                        $('#rootwizard').find('.pager .next').show();
+                        $('#rootwizard').find('.pager .finish').hide();
+                    }
+                }
+            });
+            $('#rootwizard .finish').click(function () {
+                //alert('Finished!, Starting over!');
+                $('#rootwizard').find("a[href*='tab1']").trigger('click');
+                location.href = "stu_do_design.html";
+            });
+        });
+    </script>
+</body>
+</html>

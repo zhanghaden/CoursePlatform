@@ -1,0 +1,567 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>教师管理页面</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+    <!-- global styles -->
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/elements.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/icons.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/beike.css" />
+
+
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- scripts -->
+    <script src="../vendors/jquery-1.9.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+<script src="../assets/scripts.js"></script>
+    <link href="../vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+    <link href="../assets/styles.css" rel="stylesheet" media="screen">
+
+</head>
+<body style="padding-top:0px;">
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <ul class="nav pull-right">
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-envelope-alt"></i>&nbsp;&nbsp;通知
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign" style="color: #dadada;"></i></a>
+                            <div class="messages">
+                                <a href="#" class="item">
+                                    <div class="name">通知</div>
+                                    <div class="msg">
+                                        通知1:您的课程已更新成功！
+                                    </div>
+                                </a>
+                                <a href="#" class="item">
+                                    <div class="name">站内信</div>
+                                    <div class="msg">
+                                        站内信1.您好，您于2015.07.08 11:39 登录本系统。
+                                    </div>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">查看所有</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">我的账户
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="personal-info.html">个人信息</a></li>
+                    </ul>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="../sale/login.html" role="button">
+                        <i class="icon-share-alt"></i>&nbsp;&nbsp;注销
+                    </a>
+                </li>
+            </ul>
+            <a class="brand teachertp">教师界面</a>
+            <ul class="nav">
+                <li>
+                    <a href="../manual/teacher.html">首页</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">快速导航<b class="caret"></b>
+
+                    </a>
+                    <ul class="dropdown-menu" id="menu1">
+                        <li>
+                            <a href="../teacher/tch_instructmanual.html">教师备课</a>
+
+                        </li>
+                        <li>
+                            <a href="../manual/teacher_class_scene.html">教师上课</a>
+
+                        </li>
+
+                        <li>
+                            <a href="../manual/teacher_control.html">教师管理</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+<!-- sidebar -->
+<div id="sidebar-nav">
+    <ul id="dashboard-menu">
+        <li>
+            <a href=""teacher_control.html">
+                <i class="icon-star"></i>
+                <span>教师互动</span>
+            </a>
+        </li>
+        <!--<li>
+            <a href="courselist.html">
+                <i class="icon-th-large"></i>
+                <span>学生动态</span>
+            </a>
+        </li>
+        <li class="active">
+            <a href="multiple.html">
+                <i class="icon-code-fork"></i>
+                <span>学生成绩统计</span>
+            </a>
+        </li>
+        <li>
+            <a href="studentlist.html">
+                <i class="icon-group"></i>
+                <span>学生列表</span>
+            </a>
+        </li>-->
+        <li>
+            <a href="studentlist.html">
+                <i class="icon-list"></i>
+                <span>学生列表</span>
+            </a>
+        </li>
+        <!--<li>
+            <a href="studentstate.html">
+                <i class="icon-map-marker"></i>
+                <span>学生动态</span>
+            </a>
+        </li>-->
+        <li>
+            <a href="gradechart.html">
+                <i class="icon-signal"></i>
+                <span>成绩统计</span>
+            </a>
+        </li>
+        <li>
+            <a href="personal-info.html">
+                <i class="icon-cog"></i>
+                <span>个人信息</span>
+            </a>
+        </li>
+        <li>
+            <a href="appraise.html">
+                <i class="icon-cog"></i>
+                <span>评价量表</span>
+            </a>
+        </li>
+
+    </ul>
+</div>
+<!-- end sidebar -->
+
+
+<!-- main container -->
+<div class="content">
+    <div class="multi-content">
+        <div class="row-fluid">
+            <!-- block -->
+            <div class="block">
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">课程统计</div>
+                    <div class="pull-right"><a href=""><span class="badge badge-info">View More</span></a>
+
+                    </div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="span3">
+                        <div class="chart" data-percent="73">73%</div>
+                        <div class="chart-bottom-heading"><span class="label label-info">访客</span>
+
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="chart" data-percent="53">53%</div>
+                        <div class="chart-bottom-heading"><span class="label label-info">页面访问数</span>
+
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="chart" data-percent="83">83%</div>
+                        <div class="chart-bottom-heading"><span class="label label-info">学生</span>
+
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="chart" data-percent="13">13%</div>
+                        <div class="chart-bottom-heading"><span class="label label-info">课程</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /block -->
+        </div>
+
+        <!--<div class="row-fluid">
+            <div class="span6">
+                
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-left">学生</div>
+                        <div class="pull-right"><a href="tables.html"<span class="badge badge-info">1,234</span></a>
+
+                        </div>
+                    </div>
+                    <div class="block-content collapse in">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>班级</th>
+                                <th>所上课程</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>张三</td>
+                                <td>一班</td>
+                                <td>新能源小车</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>小明</td>
+                                <td>一班</td>
+                                <td>新能源小车</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>小红</td>
+                                <td>二班</td>
+                                <td>新能源小车</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="span6">
+               
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-left">课程</div>
+                        <div class="pull-right"><span class="badge badge-info">752</span>
+
+                        </div>
+                    </div>
+                    <div class="block-content collapse in">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>课程名称</th>
+                                <th>开课日期</th>
+                                <th>上课人数</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>新能源小车</td>
+                                <td>02/02/2013</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jacket</td>
+                                <td>01/02/2013</td>
+                                <td>$335.00</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Shoes</td>
+                                <td>01/02/2013</td>
+                                <td>$29.99</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>-->
+        <div class="block">
+         <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">博客</div>
+                    <div class="pull-right"><span class="badge badge-info">4</span>
+
+                    </div>
+                </div>
+        <div class="block-content collapse in">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>日期</th>
+                                <th>问题</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>02/02/2013</td>
+                                <td>新能源小车</td>
+                            </tr>
+                            <tr>
+                                <td>小明</td>
+                                <td>01/02/2013</td>
+                                <td>新能源小车</td>
+                            </tr>
+                            <tr>
+                                <td>小红</td>
+                                <td>01/02/2013</td>
+                                <td>新能源小车</td>
+                            </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+        </div>
+
+                <div class="block">
+         <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">留言板</div>
+                    <div class="pull-right"><span class="badge badge-info">4</span>
+
+                    </div>
+                </div>
+        <div class="block-content collapse in">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>姓名</th>
+                                <th>日期</th>
+                                <th>问题</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>张三</td>
+                                <td>02/02/2013</td>
+                                <td>新能源小车</td>
+                            </tr>
+                            <tr>
+                                <td>小明</td>
+                                <td>01/02/2013</td>
+                                <td>新能源小车</td>
+                            </tr>
+                            <tr>
+                                <td>小红</td>
+                                <td>01/02/2013</td>
+                                <td>新能源小车</td>
+                            </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+        </div>
+        <!--<div class="row-fluid">
+            <div class="span6">
+                
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-left">热点讨论</div>
+                        <div class="pull-right"><span class="badge badge-info">17</span>
+
+                        </div>
+                    </div>
+                    <div class="block-content collapse in">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Vincent</td>
+                                <td>Gabriel</td>
+                                <td>@gabrielva</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="span6">
+   
+                <div class="block">
+                    <div class="navbar navbar-inner block-header">
+                        <div class="muted pull-left">互动消息</div>
+                        <div class="pull-right"><span class="badge badge-info">812</span>
+
+                        </div>
+                    </div>
+                    <div class="block-content collapse in">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>02/02/2013</td>
+                                <td>$25.12</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>01/02/2013</td>
+                                <td>$335.00</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>01/02/2013</td>
+                                <td>$29.99</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+            </div>
+        </div>-->
+
+
+      <!--  <div class="row-fluid">
+          
+            <div class="block">
+                <div class="navbar navbar-inner block-header">
+                    <div class="muted pull-left">上传作品</div>
+                    <div class="pull-right"><span class="badge badge-info">1,462</span>
+
+                    </div>
+                </div>
+                <div class="block-content collapse in">
+                    <div class="row-fluid padd-bottom">
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row-fluid padd-bottom">
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row-fluid padd-bottom">
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                        <div class="span3">
+                            <a href="#" class="thumbnail">
+                                <img alt="260x180" style="width: 260px; height: 180px;" src="img/pic.png">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>-->
+    </div>
+</div>
+
+<!-- end main container -->
+<script>
+    $(function () {
+        // Easy pie charts
+        $('.chart').easyPieChart({ animate: 1000 });
+    });
+</script>
+
+
+</body>
+</html>

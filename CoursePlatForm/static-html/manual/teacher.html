@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>教师课程目录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap -->
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/elements.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/lilei/icons.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet/yshq/beike.css" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="../stylesheet/yshq/courselist.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../stylesheet/yshq/multiple.css" type="text/css" media="screen" />
+
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- scripts -->
+    <script src="../vendors/jquery-1.9.1.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="../javascript/yshq/jquery.easy-pie-chart.js"></script>
+</head>
+<body>
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <ul class="nav pull-right">
+                <li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-envelope-alt"></i>&nbsp;&nbsp;通知
+                    </a>
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign" style="color: #dadada;"></i></a>
+                            <div class="messages">
+                                <a href="#" class="item">
+                                    <div class="name">通知</div>
+                                    <div class="msg">
+                                        通知1:您的课程已更新成功！
+                                    </div>
+                                </a>
+                                <a href="#" class="item">
+                                    <div class="name">站内信</div>
+                                    <div class="msg">
+                                        站内信1.您好，您于2015.07.08 11:39 登录本系统。
+                                    </div>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">查看所有</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">我的账户
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="personal-info.html">个人信息</a></li>
+                    </ul>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="../sale/login.html" role="button">
+                        <i class="icon-share-alt"></i>&nbsp;&nbsp;注销
+                    </a>
+                </li>
+            </ul>
+            <a class="brand teachertp">教师界面</a>
+            <ul class="nav">
+                <li>
+                    <a>首页</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">快速导航<b class="caret"></b>
+
+                    </a>
+                    <ul class="dropdown-menu" id="menu1">
+
+                        <li>
+                            <a href="../manual/teacher_control.html">教师管理</a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- end navbar -->
+
+    <!-- sidebar -->
+    <!--<div id="sidebar-nav">
+        <ul id="dashboard-menu">
+            <li>
+               <a href="../teacher/courselist.html">
+                    <i class="icon-home"></i>
+                    <span>教师备课</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="courselist.html">
+                    <i class="icon-th-large"></i>
+                    <span>教师上课</span>
+                </a>
+            </li>
+            <li>
+                <a href="teacher_control.html">
+                    <i class="icon-th-large"></i>
+                    <span>教师管理</span>
+                </a>
+            </li>
+            
+            <!--<li>
+                <a href="studentlist.html">
+                    <i class="icon-group"></i>
+                    <span>学生列表</span>
+                </a>
+            </li>
+            <li>
+                <a href="studentstate.html">
+                    <i class="icon-group"></i>
+                    <span>学生动态</span>
+                </a>
+            </li>
+            <li>
+                <a href="gradechart.html">
+                    <i class="icon-signal"></i>
+                    <span>成绩图表</span>
+                </a>
+            </li>
+            <li>
+                <a href="personal-info.html">
+                    <i class="icon-cog"></i>
+                    <span>个人信息</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>-->
+    <!-- end sidebar -->
+
+
+    <!-- main container -->
+
+
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="users-list">
+            <div class="row-fluid header">
+                
+
+                    
+               
+
+                <div class="span9 pull-right">
+                    <h3>我的课程&nbsp;</h3>
+                    <input type="text" class="span5 search" placeholder="课程名称……" />
+
+                    <!-- custom popup filter -->
+                    <!-- styles are located in css/elements.css -->
+                    <!-- script that enables this dropdown is located in js/theme.js -->
+                    <div class="ui-dropdown">
+                        <div class="head" data-toggle="tooltip" title="单击">
+                            条件查找
+                                <i class="arrow-down"></i>
+                        </div>
+                        <div class="dialog">
+                            <div class="pointer">
+                                <div class="arrow"></div>
+                                <div class="arrow_border"></div>
+                            </div>
+                            <div class="body">
+                                <p class="title">
+                                    显示课程:
+                                </p>
+                                <div class="form">
+                                    <select>
+                                        <option>课程名称</option>
+                                        <option>上课时间</option>
+                                        <option>上课人数</option>
+                                    </select>
+                                    <select>
+                                        <option />
+                                        等于
+                                            <option />
+                                        以…开头
+                                            <option />
+                                        包含
+                                    </select>
+                                    <input type="text" />
+                                    <a class="btn-flat small">添加条件</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Users table -->
+            <div class="row-fluid table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="span4 sortable">课程名称
+                            </th>
+                            <th class="span3 sortable">
+                                <span class="line">上线时间</span>
+                            </th>
+                            <th class="span2 sortable">
+                                <span class="line">上课人数</span>
+                            </th>
+                            <th class="span2 sortable">
+                                <span class="line">在线人数</span>
+                            </th>
+                            <th class="span2 sortable">
+                                <span class="line">备课</span>
+                            </th>
+                            <th class="span2 sortable align-right">
+                                <span class="line">上课</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- row -->
+                        <tr class="first">
+                            <td>
+                                <a href="../manual/teacher_class_scene.html" class="name">警报小车制作</a>
+                            </td>
+                            <td>2015年7月8号
+                            </td>
+                            <td class="align-center">45
+                            </td>
+                            <td class="align-center">1
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/tch_instructmanual.html" class="btn btn-warning">备课
+                                </a>
+                            </td>
+                            <td class="align-center">
+                                <a href="../manual/teacher_class_scene.html" class="btn btn-success">上课
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- row -->
+                        <tr>
+                            <td>
+                                <a href="teacher_class_scene.html" class="name">智能小车制作</a>
+                            </td>
+                            <td>2015年7月8号
+                            </td>
+                            <td class="align-center">45
+                            </td>
+                            <td class="align-center">1
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/tch_instructmanual.html" class="btn btn-warning">备课
+                                </a>
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/teacher_class_scene.html" class="btn btn-success">上课
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- row -->
+                        <tr>
+                            <td>
+                                <a href="../../诺凡特创新教育销售文件夹/first.html" class="name">智能小车制作</a>
+                            </td>
+                            <td>2015年7月8号
+                            </td>
+                            <td class="align-center">45
+                            </td>
+                            <td class="align-center">1
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/tch_instructmanual.html" class="btn btn-warning">备课
+                                </a>
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/teacher_class_scene.html" class="btn btn-success">上课
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- row -->
+                        <tr>
+                            <td>
+                                <a href="../../诺凡特创新教育销售文件夹/first.html" class="name">智能小车制作</a>
+                            </td>
+                            <td>2015年7月8号
+                            </td>
+                            <td class="align-center">45
+                            </td>
+                            <td class="align-center">1
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/tch_instructmanual.html" class="btn btn-warning">备课
+                                </a>
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/teacher_class_scene.html" class="btn btn-success">上课
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- row -->
+                        <tr>
+                            <td>
+                                <a href="../../诺凡特创新教育销售文件夹/first.html" class="name">智能小车制作</a>
+                            </td>
+                            <td>2015年7月8号
+                            </td>
+                            <td class="align-center">45
+                            </td>
+                            <td class="align-center">1
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/tch_instructmanual.html" class="btn btn-warning">备课
+                                </a>
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/teacher_class_scene.html" class="btn btn-success">上课
+                                </a>
+                            </td>
+                        </tr>
+                        <!-- row -->
+                        <tr style="border-bottom: 1px solid #ddd;">
+                            <td>
+                                <a href="../../诺凡特创新教育销售文件夹/first.html" class="name">智能小车制作</a>
+                            </td>
+                            <td>2015年7月8号
+                            </td>
+                            <td class="align-center">45
+                            </td>
+                            <td class="align-center">1
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/tch_instructmanual.html" class="btn btn-warning">备课
+                                </a>
+                            </td>
+                            <td class="align-center">
+                                <a href="../teacher/tstu_do_scene.html" class="btn btn-success">上课
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination pull-right">
+                <ul>
+                    <li><a href="#">&#8249;</a></li>
+                    <li><a class="active" href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&#8250;</a></li>
+                </ul>
+            </div>
+            <!-- end users table -->
+        </div>
+    </div>
+
+    <!-- end main container -->
+
+
+
+
+</body>
+</html>

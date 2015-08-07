@@ -1,0 +1,16 @@
+
+ 
+记录时间：2015-08-06 11:32:39,551 
+线程ID:[7] 
+日志级别：  ERROR 
+出错类：CoursePlatForm.Controllers.IndexController property: [(null)] - 
+错误描述：测试Log4Net日志是否写入
+ 
+
+ 
+记录时间：2015-08-06 20:34:12,955 
+线程ID:[5] 
+日志级别：  ERROR 
+出错类：CoursePlatForm.Controllers.IndexController property: [(null)] - 
+错误描述：测试Log4Net日志是否写入
+ 

@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<h2>index</h2>
+@section head{
+    
+    }
+@section bodyNav{
+    @*@Html.Partial("LeftMenu_Partial")*@
+ @{
+     Html.RenderAction("LeftMenu_Partial", "index");
+ }
+    <a>nav  section</a>
+    }
+
+
+
+@section bodyFoot{
+    <a>foot section</a>
+    }
+

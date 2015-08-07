@@ -1,0 +1,141 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="css/bootstrap.min.css" rel='stylesheet' type='text/css'/>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <!-- Custom Theme files -->
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close').on('click', function (c) {
+            $('.message').fadeOut('slow', function (c) {
+                $('.message').remove();
+            });
+        });
+    });
+    </script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close1').on('click', function (c) {
+            $('.message1').fadeOut('slow', function (c) {
+                $('.message1').remove();
+            });
+        });
+    });
+    </script>
+    <script>$(document).ready(function (c) {
+        $('.alert-close2').on('click', function (c) {
+            $('.message2').fadeOut('slow', function (c) {
+                $('.message2').remove();
+            });
+        });
+    });
+	$(function(){
+		$("#login").click(function(){
+		    //event.preventDefault();
+		    //alert($("#name").val);
+		    if ($("#name").val() == 'student') {
+		        location.href = "../student/stu_course_list.html";
+		    }
+		    else {
+		        location.href = "../manual/teacher.html";
+		    }
+		});
+	});
+    </script>
+</head>
+<body>
+<div class="header_bg">
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>诺凡特在线教育</h1>
+
+                    <div class="clear"></div>
+                </a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!-- start header -->
+<div class="header_btm">
+    <div class="wrap">
+        <div class="header_sub">
+            <div class="h_menu">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="classlist.html">课程目录</a></li>
+                    <li><a href="#">XXX</a></li>
+                    <li class="active"><a href="#">XXX</a></li>
+                    <li><a href="#">XXXS</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<div class="about_top">
+    <div class="container-fluid">
+        <div class="row-fluid">
+        <div class="span8 offset2 content_right">
+            <div class="dreamcrub">
+                <ul class="breadcrumbs">
+                    <li class="home">
+                        <a href="index.html" title="Go to Home Page">首页</a>&nbsp;
+                        <span>&gt;</span>
+                    </li>
+                    <li class="women">
+                        登录
+                    </li>
+                </ul>
+                <ul class="previous">
+                    <li><a href="javascript :;" onClick="javascript :history.back(-1);">返回上一页</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="register">
+                <div class="span6 offset3 login-right">
+                    <h3>登录信息</h3>
+
+                    <p>如果您已有账户，请直接登录</p>
+
+                    <form>
+                        <div>
+                            <span>Email&nbsp; *</span>
+                            <input type="text" id="name"/>
+                        </div>
+                        <div>
+                            <span>密码&nbsp; *</span>
+                            <input type="text">
+                        </div>
+                        <span style="margin-bottom: 10px;"><a class="forgot" href="#">忘记密码?</a></span>
+						<input type="button" class="login-right" id="login" value="登录" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="register.html"><input type="submit"  id="register" value="注册"></a>
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="copy">
+    <p>Copyright &copy; 2015. All rights reserved.
+</div>
+<script>
+$(function(){
+		$('#register').on('click',function(){
+				location.href='register.html';
+				});
+		});
+</script>
+</body>
+</html>		
