@@ -9,146 +9,19 @@
 
     <fieldset>
         <legend>申请表详情</legend>
-
-        <div class="display-label">
-            单位名称
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.UnitNameCH)
-        </div>
-
-        <div class="display-label">
-            单位英文名称
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.UnitNameEN)
-        </div>
-
-        <div class="display-label">
-            单位负责人
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.ChargePerson)
-        </div>
-
-        <div class="display-label">
-            联系人
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.ContactPerson)
-        </div>
-
-        <div class="display-label">
-            电子信箱
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Email)
-        </div>
-
-        <div class="display-label">
-            电话
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Phone)
-        </div>
-
-        <div class="display-label">
-            单位地址
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.UnitAddress)
-        </div>
-
-        <div class="display-label">
-            邮编
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.ZipCode)
-        </div>
-
-        <div class="display-label">
-            单位简介
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.UnitIntro)
-        </div>
-
-        <div class="display-label">
-            教师人数
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.TeacherNum)
-        </div>
-
-        <div class="display-label">
-            在校生人数
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.StuNum)
-        </div>
-
-        <div class="display-label">
-            2015年毕业生人数
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Gradu2015Num)
-        </div>
-
-        <div class="display-label">
-            高级职称教师人数
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.SeniorTitleNum)
-        </div>
-
-        <div class="display-label">
-            中级职称教师人数
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.IntermediateTitleNum)
-        </div>
-
-        <div class="display-label">
-            其他职称教师人数
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.OtherTitleNum)
-        </div>
-
-        <div class="display-label">
-            信息技术专业教师人数
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.TechTeacherNum)
-        </div>
-
-        <div class="display-label">
-            获得信息技术相关认证教师人数
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.AuthTechTeacherNum)
-        </div>
-
-        <div class="display-label">
-            专业计算机房面积
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.EngineRoomArea)
-        </div>
-
-        <div class="display-label">
-            计算机台数及基本配置
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.ComputerNumConfig)
-        </div>
-
-        <div class="display-label">
-            提交申请时间
-        </div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.RecordTime)
-        </div>
+        <table>
+        @foreach (var item in ViewBag.listShowAppTable as List<Models.Tb_FieldTable>)
+        {
+            <tr>
+                        <td>@item.DisplayName</td>
+                        <td>
+                            @{Dictionary<string, object> dic = (Dictionary<string, object>)ViewBag.dic;
+                               }
+                            @dic.First(m => m.Key == item.FieldName).Value
+                            </td>
+                    </tr>
+        }
+            </table>
         <div class="navbar navbar-inner block-header">
             <div class="muted pull-left">软件申请列表</div>
         </div>

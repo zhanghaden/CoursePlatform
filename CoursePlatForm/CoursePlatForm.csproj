@@ -44,6 +44,10 @@
       <HintPath>bin\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\NPOI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -128,13 +132,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Common\ConvertDict.cs" />
+    <Compile Include="Common\GenerateUser.cs" />
     <Compile Include="Common\Log4NetHelper.cs" />
+    <Compile Include="Common\NPOIHelper.cs" />
+    <Compile Include="Common\UpLoad.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\CheckAccountAttribute.cs" />
     <Compile Include="Controllers\Designer\bianji\Default1Controller.cs" />
     <Compile Include="Controllers\SoftDown\AdminSoftManageController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\SoftDown\SoftDownController.cs" />
+    <Compile Include="Controllers\User\GeneralUserFunController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\log4net.dll" />
+    <Content Include="bin\NPOI.dll" />
     <Content Include="Content\assets\DT_bootstrap.css" />
     <Content Include="Content\assets\DT_bootstrap.js" />
     <Content Include="Content\assets\form-validation.js" />
@@ -2907,7 +2917,9 @@
     <Content Include="static-html\vendors\wysiwyg\bootstrap-wysihtml5.css" />
     <Content Include="static-html\vendors\wysiwyg\bootstrap-wysihtml5.js" />
     <Content Include="static-html\vendors\wysiwyg\wysihtml5-0.3.0.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -3059,9 +3071,14 @@
     <Content Include="Views\Shared\_LayoutPage1.cshtml" />
     <Content Include="Views\Shared\LeftMenu_Partial.cshtml" />
     <Content Include="Views\Index\index.cshtml" />
+    <Content Include="Views\SoftDown\备份ApplyTable.cshtml" />
+    <Content Include="Views\SoftDown\备份ApplyDetail.cshtml" />
+    <Content Include="Views\SoftDown\副本 EditApplyTable.cshtml" />
+    <Content Include="Views\SoftDown\ImportApplyData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ExcelFile\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

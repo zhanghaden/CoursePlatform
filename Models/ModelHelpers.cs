@@ -241,7 +241,7 @@ namespace Models
         }
         #endregion
 
-        #region 7.0 复杂查询语句 +SqlQuery<T>(T model)
+        #region 7.0 复杂查询语句 +SqlQuery<T>(string strSql, params  SqlParameter[] paras)
         /// <summary>
         /// 当对数据库进行复杂的sql语句查询语句的时候，调用的方法
         /// </summary>

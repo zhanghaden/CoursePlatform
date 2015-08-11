@@ -9,6 +9,10 @@ using System.Text;
 using CommonClassLibrary;
 using System.Web.Security;
 using System.Data;
+using System.Data.SqlClient;
+using CoursePlatForm.Common;
+using System.IO;
+using CourseCenter.Common;
 
 namespace CoursePlatForm.Controllers
 {
@@ -33,6 +37,15 @@ namespace CoursePlatForm.Controllers
         [CheckAccount(Roles = "user")]
         public ActionResult ApplyTable()
         {
+            //这句用于选择出要用的字段项
+            var listShowAppTable =
+                from n in db.Tb_FieldTable
+                where n.IsUse == 1
+                select n;
+            ViewBag.list = listShowAppTable.ToList<Tb_FieldTable>();
+            ////下面的sql用于拼接为查询字符串，从而滤掉不用的字段，实现字段编辑效果
+            //string strSql = "select ";
+            //mHelp.SqlQuery<Tb_ApplyTable>("", new SqlParameter("@Id", id));
             return View();
         }
 
@@ -42,29 +55,25 @@ namespace CoursePlatForm.Controllers
         /// <param name="ApplyTable"></param>
         /// <returns></returns>
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         [CheckAccount(Roles = "user")]
         public ActionResult ApplyTable(Tb_ApplyTable ApplyTable)
         {
             ApplyTable.RecordTime = DateTime.Today;
             ApplyTable.UserID = int.Parse(TakeCookie.GetCookie("userId"));
             ApplyTable.IsPass = 0;
-            //ModelState.IsValid用于
-            if (ModelState.IsValid)
+            if (mHelp.Add<Tb_ApplyTable>(ApplyTable) > 0)
             {
-                if (mHelp.Add<Tb_ApplyTable>(ApplyTable) > 0)
-                {
-                    Session["ApplyID"] = ApplyTable.ApplyID;
-                    return RedirectToAction("SoftList", new { id = ApplyTable.ApplyID });
-                }
-                else
-                {
-                    return View();
-                }
+                Session["ApplyID"] = ApplyTable.ApplyID;
+                return RedirectToAction("SoftList", new { id = ApplyTable.ApplyID });
             }
-            return View("index");
+            else
+            {
+                return View();
+            }
+
         }
-        
+
         #endregion
 
 
@@ -98,7 +107,7 @@ namespace CoursePlatForm.Controllers
             }
 
             return RedirectToAction("SoftUse", new { dict = softs.ToString().Substring(0, softs.ToString().Length - 1) });
-        } 
+        }
         #endregion
 
 
@@ -139,10 +148,10 @@ namespace CoursePlatForm.Controllers
             }
             return View("AddSoftCourse");
         }
-        
+
         #endregion
 
-        
+
         #region 第四步，填写已有的信息技术课程
 
         /// <summary>
@@ -192,7 +201,7 @@ namespace CoursePlatForm.Controllers
             }
 
         }
-        
+
         #endregion
 
         #region 第五步，软件申请成功后等待审核的页面+管理已添加的申请表功能
@@ -223,7 +232,17 @@ namespace CoursePlatForm.Controllers
         public ActionResult ApplyDetail(int id)
         {
             //用于显示申请表的信息
+            //先把字段列清楚
+            var listShowAppTable =
+                    from n in db.Tb_FieldTable
+                    where n.IsUse == 1
+                    select n;
+            ViewBag.listShowAppTable = listShowAppTable.ToList<Tb_FieldTable>();
             Tb_ApplyTable applyTableModel = db.Tb_ApplyTable.Where(c => c.ApplyID == id).FirstOrDefault();
+            //applyTableModel
+            //调用对象转dictionary方法完成转换
+            Dictionary<string, object> dic = ConvertDict.ToMap(applyTableModel);
+            ViewBag.dic = dic;
             //用于显示申请的软件列表的信息
             var queryApplySoftList =
                 from n in db.Tb_ApplySoftList
@@ -244,34 +263,36 @@ namespace CoursePlatForm.Controllers
 
         public ActionResult EditApplyTable(int id = 0)
         {
-            Tb_ApplyTable tb_applytable = db.Tb_ApplyTable.Find(id);
-            if (tb_applytable == null)
+            //先把字段列清楚
+            var listShowAppTable =
+                    from n in db.Tb_FieldTable
+                    where n.IsUse == 1
+                    select n;
+            ViewBag.listShowAppTable = listShowAppTable.ToList<Tb_FieldTable>();
+            Tb_ApplyTable applyTableModel = db.Tb_ApplyTable.Where(c => c.ApplyID == id).FirstOrDefault();
+            //applyTableModel
+            //调用对象转dictionary方法完成转换
+            Dictionary<string, object> dic = ConvertDict.ToMap(applyTableModel);
+            ViewBag.dic = dic;
+            if (applyTableModel == null)
             {
                 return HttpNotFound();
             }
-            return View(tb_applytable);
+            return View(applyTableModel);
         }
 
         //
         // POST: 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult EditApplyTable(Tb_ApplyTable tb_applytable)
         {
             //对于不能由用户填写的字段手动赋值
             tb_applytable.RecordTime = DateTime.Now;
             tb_applytable.IsPass = 0;
             tb_applytable.UserID = int.Parse(TakeCookie.GetCookie("userId"));
-
-
-            //判断模型状态是否验证通过
-            if (ModelState.IsValid)
-            {
-                db.Entry(tb_applytable).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("ApplySuccess");
-            }
+            db.Entry(tb_applytable).State = EntityState.Modified;
+            db.SaveChanges();
             return RedirectToAction("ApplySuccess", "SoftDown");
         }
         #endregion
@@ -302,7 +323,7 @@ namespace CoursePlatForm.Controllers
             {
                 db.Tb_ApplySoftList.Add(tb_applysoftlist);
                 db.SaveChanges();
-                return RedirectToAction("ApplyedSoftList", new {id= tb_applysoftlist.ApplyID });
+                return RedirectToAction("ApplyedSoftList", new { id = tb_applysoftlist.ApplyID });
             }
 
             return View(tb_applysoftlist);
@@ -492,7 +513,7 @@ namespace CoursePlatForm.Controllers
 
 
         }
-        
+
         #endregion
 
 
@@ -555,6 +576,86 @@ namespace CoursePlatForm.Controllers
             return RedirectToAction("ApplyList");
         }
 
+        /// <summary>
+        /// 导入excel表数据
+        /// </summary>
+        /// <returns></returns>
+        ///get
+        [CheckAccount(Roles = "admin")]
+        public ActionResult ImportApplyData()
+        {
+            return View();
+        }
+
+        public bool CheckFileType(string fileName)//判断类型是否是excel
+        {
+            string ext = Path.GetExtension(fileName);
+            if (ext.ToLower() == ".xls" || ext.ToLower() == ".xlsx")
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// 导入excel表数据（1.读取excel 2.获得数据表条数 3.按照表格中的数据条数生成User账户 4.写入ApplyTable数据表数据）
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [CheckAccount(Roles = "admin")]
+        public ActionResult ImportApplyData(FormCollection form)
+        {
+            UpLoad upFile = new UpLoad();
+            string fileName = Request.Files["fileExcel"].FileName;
+
+            if (CheckFileType(fileName))//检查上传文件的类型
+            {
+                string path = upFile.SaveFile(Request.Files["fileExcel"]);
+
+                NPOIHelper.path = path;
+                //获取到excel的行数
+                int rowNum = NPOIHelper.getRowNum();
+                //循环行数次，添加相同数量账户进user表
+                for (int i = 1; i <= rowNum; i++)
+                {
+                    try
+                    {
+                        Tb_SoftUser SoftUser = new Tb_SoftUser()
+                        {
+                            UserName = GenerateUser.RandomLoginName(),
+                            PassWord = GenerateUser.RandomPassword(),
+                            UserType = 2
+                        };
+                        db.Tb_SoftUser.Add(SoftUser);
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
+                }
+                //SaveChanges方法可以在上面多次执行数据库操作时缓存，最后一次性写入数据库
+                db.SaveChanges();
+                //在保存入数据库后，获得了userID，可以进一步把数据存入ApplyTable，按照最新添加的记录条数来看
+                List<Tb_SoftUser> listNewUser = mHelp.GetListBy<Tb_SoftUser>(m => m.UserType == 2);
+                //获得最后添加的UserType=2的，rowNum行数据，认为是新添加的user
+                listNewUser = listNewUser.GetRange(listNewUser.Count - rowNum, rowNum);
+                var listShowAppTable =
+                    from n in db.Tb_FieldTable
+                    where n.IsUse == 1
+                    select n;
+                List<Tb_FieldTable> listField = listShowAppTable.ToList<Tb_FieldTable>();
+                int rowAffact = NPOIHelper.RenderToDb(listField, listNewUser);
+                if (rowAffact != 0)
+                {
+                    return RedirectToAction("ApplyList");
+                }
+                else
+                    return View();
+            }
+            return View();
+            
+        }
 
         #endregion
 
@@ -582,8 +683,6 @@ namespace CoursePlatForm.Controllers
         //[Common.Skip]
         public ActionResult Index(Tb_SoftUser userModel)
         {
-
-
             //根据页面传来的值，调用GetUser方法
             Tb_SoftUser user = GetUser(userModel);
             if (user == null)
@@ -608,8 +707,22 @@ namespace CoursePlatForm.Controllers
                     }
                     else//如果没有申请，进入申请界面
                     {
-                        return View("ApplyTable");
+                        return RedirectToAction("ApplyTable");
                     }
+                }
+                else if (user.UserType == 2)//导入的用户
+                {
+                    TakeCookie.SetCookie("userRole", "user");
+                    Tb_ApplyTable modelTable = (Tb_ApplyTable)mHelp.GetModelBy<Tb_ApplyTable>(m => m.UserID == user.UserID);
+                    if (modelTable != null)//如果不为空，意味着可以编辑
+                    {
+                        if (modelTable.IsPass == 0)//如果申请未通过，则进入编辑界面
+                            return RedirectToAction("EditApplyTable", new { id = modelTable.ApplyID });
+                        else//如果通过，则进入软件下载界面
+                            return RedirectToAction("SoftDownList");
+                    }
+                    else
+                        return View("Index");
                 }
                 else//管理员用户
                 {
@@ -617,10 +730,7 @@ namespace CoursePlatForm.Controllers
                     return RedirectToAction("ApplyList");
                 }
             }
-
-
             //跳转到ApplyList方法
-
         }
         #endregion
 
@@ -645,7 +755,7 @@ namespace CoursePlatForm.Controllers
             return View("Index");
         }
         #endregion
-        
+
         #endregion
 
 

@@ -16,7 +16,10 @@ namespace Models
         public DbSet<Tb_SoftCourse> Tb_SoftCourse { get; set; }
         public DbSet<Tb_SoftList> Tb_SoftList { get; set; }
         public DbSet<Tb_SoftUser> Tb_SoftUser { get; set; }
-       
+        public DbSet<Tb_FieldTable> Tb_FieldTable { get; set; }
+        public DbSet<Tb_StuUser> Tb_StuUser { get; set; }
+        public DbSet<Tb_ManageUser> Tb_ManageUser { get; set; }
+        public DbSet<Tb_City> Tb_City { get; set; }
 
         //第一次请求时 会根据数据库连接字符串 和model 创建数据库
         public DBEntities()

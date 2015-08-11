@@ -9,3 +9,9 @@ D:\CoursePlatform\CoursePlatform\Models\bin\Debug\EntityFramework.dll
 D:\CoursePlatform\CoursePlatform\Models\obj\Debug\Models.dll
 D:\CoursePlatform\CoursePlatform\Models\obj\Debug\Models.pdb
 D:\CoursePlatform\CoursePlatform\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+D:\CoursePlatform\CoursePlatformdevelop\Models\bin\Debug\Models.dll
+D:\CoursePlatform\CoursePlatformdevelop\Models\bin\Debug\Models.pdb
+D:\CoursePlatform\CoursePlatformdevelop\Models\bin\Debug\EntityFramework.dll
+D:\CoursePlatform\CoursePlatformdevelop\Models\obj\Debug\Models.dll
+D:\CoursePlatform\CoursePlatformdevelop\Models\obj\Debug\Models.pdb
+D:\CoursePlatform\CoursePlatformdevelop\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+D:\CoursePlatform\CoursePlatformdevelop\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\CoursePlatform\CoursePlatformdevelop\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\CoursePlatform\CoursePlatformdevelop\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\CoursePlatform\CoursePlatformdevelop\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+D:\CoursePlatform\CoursePlatformdevelop\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\CoursePlatform\CoursePlatformdevelop\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

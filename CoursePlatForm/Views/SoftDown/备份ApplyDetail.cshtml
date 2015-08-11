@@ -1,0 +1,255 @@
+﻿@model Models.Tb_ApplyTable
+
+@{
+    ViewBag.Title = "ApplyDetail";
+    Layout = "~/Views/Shared/SoftDown_Layout.cshtml";
+}
+
+@section  span9{
+
+    <fieldset>
+        <legend>申请表详情</legend>
+
+        <div class="display-label">
+            单位名称
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UnitNameCH)
+        </div>
+
+        <div class="display-label">
+            单位英文名称
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UnitNameEN)
+        </div>
+
+        <div class="display-label">
+            单位负责人
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ChargePerson)
+        </div>
+
+        <div class="display-label">
+            联系人
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ContactPerson)
+        </div>
+
+        <div class="display-label">
+            电子信箱
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+
+        <div class="display-label">
+            电话
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Phone)
+        </div>
+
+        <div class="display-label">
+            单位地址
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UnitAddress)
+        </div>
+
+        <div class="display-label">
+            邮编
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ZipCode)
+        </div>
+
+        <div class="display-label">
+            单位简介
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UnitIntro)
+        </div>
+
+        <div class="display-label">
+            教师人数
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TeacherNum)
+        </div>
+
+        <div class="display-label">
+            在校生人数
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.StuNum)
+        </div>
+
+        <div class="display-label">
+            2015年毕业生人数
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Gradu2015Num)
+        </div>
+
+        <div class="display-label">
+            高级职称教师人数
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.SeniorTitleNum)
+        </div>
+
+        <div class="display-label">
+            中级职称教师人数
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.IntermediateTitleNum)
+        </div>
+
+        <div class="display-label">
+            其他职称教师人数
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.OtherTitleNum)
+        </div>
+
+        <div class="display-label">
+            信息技术专业教师人数
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TechTeacherNum)
+        </div>
+
+        <div class="display-label">
+            获得信息技术相关认证教师人数
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AuthTechTeacherNum)
+        </div>
+
+        <div class="display-label">
+            专业计算机房面积
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EngineRoomArea)
+        </div>
+
+        <div class="display-label">
+            计算机台数及基本配置
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ComputerNumConfig)
+        </div>
+
+        <div class="display-label">
+            提交申请时间
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.RecordTime)
+        </div>
+        <div class="navbar navbar-inner block-header">
+            <div class="muted pull-left">软件申请列表</div>
+        </div>
+        <div class="block-content collapse in">
+            <div class="span12">
+                <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example2">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>使用软件要开设的课程</th>
+                            <th>软件编号</th>
+                            <th>软件申请数量</th>
+                            <th>每年培养的学生数量</th>
+                            @*<th>详细</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @{
+                            int i = 1;
+                            foreach (Models.Tb_ApplySoftList item in @ViewBag.ApplySoftList)
+                            {
+                            <tr class="odd gradeX">
+                                <td>@i</td>
+                                <td>@item.SoftCourseName</td>
+                                <td>@item.SoftID</td>
+                                <td class="center">@item.ApplyNum </td>
+                                <td class="center">@item.TrainNumPerYear</td>
+                                @*<td>
+                                    <a class="btn btn-success" href="/SoftDown/ApplyDetail/@item.ApplyID">详情</a></td>*@
+                            </tr>
+                                i++;
+                            }
+                        }
+
+
+
+                    </tbody>
+                </table>
+                @*<input type="submit" class="btn btn-success" value="提交" />*@
+
+            </div>
+        </div>
+        <div class="navbar navbar-inner block-header">
+            <div class="muted pull-left">课程设置列表</div>
+        </div>
+        <div class="block-content collapse in">
+            <div class="span12">
+                <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>课程名称</th>
+                            <th>主要软件平台</th>
+                            <th>每学年学生数</th>
+                            @*<th>每年培养的学生数量</th>*@
+                            @*<th>详细</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @{
+                            int j = 1;
+                            foreach (Models.Tb_SoftCourse item in @ViewBag.SoftCourseList)
+                            {
+                            <tr class="odd gradeX">
+                                <td>@j</td>
+                                <td>@item.CourseName</td>
+                                <td>@item.SoftPlatform</td>
+                                <td class="center">@item.StuNum </td>
+                            </tr>
+                                j++;
+                            }
+                        }
+
+
+
+                    </tbody>
+                </table>
+                @*<input type="submit" class="btn btn-success" value="提交" />*@
+
+            </div>
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("审核通过", "ChangePass", new { id = Model.ApplyID }) |
+    @Html.ActionLink("Back to List", "ApplyList")
+    </p>
+}
+@section booterScript{
+
+    <script src="~/Content/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    @*<script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>*@
+    <script src="~/Content/assets/DT_bootstrap.js"></script>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="~/Content/assets/scripts.js"></script>
+
+    <script>
+        $(function () {
+
+        });
+    </script>
+}

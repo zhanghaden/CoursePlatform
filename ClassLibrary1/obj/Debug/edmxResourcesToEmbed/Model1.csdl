@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoursePlatformModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CoursePlatformEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="CoursePlatformModel.sysdiagrams" />
+    <EntitySet Name="Tb_ApplySoftList" EntityType="CoursePlatformModel.Tb_ApplySoftList" />
+    <EntitySet Name="Tb_ApplyTable" EntityType="CoursePlatformModel.Tb_ApplyTable" />
+    <EntitySet Name="Tb_City" EntityType="CoursePlatformModel.Tb_City" />
+    <EntitySet Name="Tb_FieldTable" EntityType="CoursePlatformModel.Tb_FieldTable" />
+    <EntitySet Name="Tb_ManageUser" EntityType="CoursePlatformModel.Tb_ManageUser" />
+    <EntitySet Name="Tb_SoftCourse" EntityType="CoursePlatformModel.Tb_SoftCourse" />
+    <EntitySet Name="Tb_SoftList" EntityType="CoursePlatformModel.Tb_SoftList" />
+    <EntitySet Name="Tb_SoftUser" EntityType="CoursePlatformModel.Tb_SoftUser" />
+    <EntitySet Name="Tb_StuUser" EntityType="CoursePlatformModel.Tb_StuUser" />
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tb_ApplySoftList">
+    <Key>
+      <PropertyRef Name="ApplySoftID" />
+    </Key>
+    <Property Name="ApplySoftID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SoftCourseName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TrainNumPerYear" Type="Int32" />
+    <Property Name="ApplyNum" Type="Int32" />
+    <Property Name="ApplyID" Type="Int32" />
+    <Property Name="SoftID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tb_ApplyTable">
+    <Key>
+      <PropertyRef Name="ApplyID" />
+    </Key>
+    <Property Name="ApplyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UnitNameCH" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UnitNameEN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ChargePerson" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ContactPerson" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UnitAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UnitIntro" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="TeacherNum" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="StuNum" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Gradu2015Num" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SeniorTitleNum" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IntermediateTitleNum" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OtherTitleNum" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TechTeacherNum" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AuthTechTeacherNum" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EngineRoomArea" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ComputerNumConfig" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="RecordTime" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="IsPass" Type="Int32" Nullable="false" />
+    <Property Name="input1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input4" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input5" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input6" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input7" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input8" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input9" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input10" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input11" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input12" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input13" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input14" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input15" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input16" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input17" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input18" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input19" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input20" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input21" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input22" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input23" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input24" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input25" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="input26" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="input27" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="input28" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="input29" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="input30" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="input31" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tb_City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Double" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ParentID" Type="Double" />
+    <Property Name="Level" Type="Double" />
+    <Property Name="Upid" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ParentPath" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Note" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Area" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tb_FieldTable">
+    <Key>
+      <PropertyRef Name="FieldName" />
+    </Key>
+    <Property Name="FieldName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DisplayName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsUse" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tb_ManageUser">
+    <Key>
+      <PropertyRef Name="ManageUserID" />
+    </Key>
+    <Property Name="ManageUserID" Type="Guid" Nullable="false" />
+    <Property Name="DeName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="DetailAddress" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="RecordTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IDCard" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="PostCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UserType" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tb_SoftCourse">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SoftPlatform" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="StuNum" Type="Int32" />
+    <Property Name="ApplyID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Tb_SoftList">
+    <Key>
+      <PropertyRef Name="SoftID" />
+    </Key>
+    <Property Name="SoftID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SoftName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SoftIntro" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="SoftType" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Contest" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DownLink" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tb_SoftUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="PassWord" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UserType" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tb_StuUser">
+    <Key>
+      <PropertyRef Name="StuID" />
+    </Key>
+    <Property Name="StuID" Type="Guid" Nullable="false" />
+    <Property Name="StuName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="StuAge" Type="Int32" />
+    <Property Name="Account" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CityID" Type="Int32" Nullable="false" />
+    <Property Name="DetailAddress" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IDCard" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="PostCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RecordTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

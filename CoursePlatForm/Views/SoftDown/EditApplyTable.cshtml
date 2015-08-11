@@ -7,170 +7,27 @@
 @section  span9{
 
     <h2>编辑申请表</h2>
-    @{
-        Html.EnableClientValidation();
-    }
     @using (Html.BeginForm())
     {
-        @Html.AntiForgeryToken()
-        @Html.ValidationSummary(true)
 
         <fieldset>
             <legend>申请表信息</legend>
 
             @Html.HiddenFor(model => model.ApplyID)
 
-            <div class="editor-label">
-                @Html.LabelFor(model => model.UnitNameCH)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.UnitNameCH)
-                @Html.ValidationMessageFor(model => model.UnitNameCH)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.UnitNameEN)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.UnitNameEN)
-                @Html.ValidationMessageFor(model => model.UnitNameEN)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.ChargePerson)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.ChargePerson)
-                @Html.ValidationMessageFor(model => model.ChargePerson)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.ContactPerson)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.ContactPerson)
-                @Html.ValidationMessageFor(model => model.ContactPerson)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Email)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Email)
-                @Html.ValidationMessageFor(model => model.Email)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Phone)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Phone)
-                @Html.ValidationMessageFor(model => model.Phone)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.UnitAddress)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.UnitAddress)
-                @Html.ValidationMessageFor(model => model.UnitAddress)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.ZipCode)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.ZipCode)
-                @Html.ValidationMessageFor(model => model.ZipCode)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.UnitIntro)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.UnitIntro)
-                @Html.ValidationMessageFor(model => model.UnitIntro)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.TeacherNum)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.TeacherNum)
-                @Html.ValidationMessageFor(model => model.TeacherNum)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.StuNum)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.StuNum)
-                @Html.ValidationMessageFor(model => model.StuNum)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Gradu2015Num)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Gradu2015Num)
-                @Html.ValidationMessageFor(model => model.Gradu2015Num)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.SeniorTitleNum)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.SeniorTitleNum)
-                @Html.ValidationMessageFor(model => model.SeniorTitleNum)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.IntermediateTitleNum)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.IntermediateTitleNum)
-                @Html.ValidationMessageFor(model => model.IntermediateTitleNum)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.OtherTitleNum)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.OtherTitleNum)
-                @Html.ValidationMessageFor(model => model.OtherTitleNum)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.TechTeacherNum)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.TechTeacherNum)
-                @Html.ValidationMessageFor(model => model.TechTeacherNum)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.AuthTechTeacherNum)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.AuthTechTeacherNum)
-                @Html.ValidationMessageFor(model => model.AuthTechTeacherNum)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.EngineRoomArea)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.EngineRoomArea)
-                @Html.ValidationMessageFor(model => model.EngineRoomArea)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.ComputerNumConfig)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.ComputerNumConfig)
-                @Html.ValidationMessageFor(model => model.ComputerNumConfig)
-            </div>
+            <table>
+                @foreach (var item in ViewBag.listShowAppTable as List<Models.Tb_FieldTable>)
+                {
+                    <tr>
+                        <td>@item.DisplayName</td>
+                        <td>
+                            @{Dictionary<string, object> dic = (Dictionary<string, object>)ViewBag.dic;
+                            }
+                            <input class="text-box single-line valid" id="@item.FieldName" name="@item.FieldName" value="@dic.First(m => m.Key == item.FieldName).Value" type="text">
+                        </td>
+                    </tr>
+                }
+            </table>
 
             <p>
                 <input type="submit" value="保存编辑" />

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoursePlatformModelStoreContainer" CdmEntityContainer="CoursePlatformEntities1">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CoursePlatformModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_ApplySoftList">
+      <EntityTypeMapping TypeName="CoursePlatformModel.Tb_ApplySoftList">
+        <MappingFragment StoreEntitySet="Tb_ApplySoftList">
+          <ScalarProperty Name="ApplySoftID" ColumnName="ApplySoftID" />
+          <ScalarProperty Name="SoftCourseName" ColumnName="SoftCourseName" />
+          <ScalarProperty Name="TrainNumPerYear" ColumnName="TrainNumPerYear" />
+          <ScalarProperty Name="ApplyNum" ColumnName="ApplyNum" />
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="SoftID" ColumnName="SoftID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_ApplyTable">
+      <EntityTypeMapping TypeName="CoursePlatformModel.Tb_ApplyTable">
+        <MappingFragment StoreEntitySet="Tb_ApplyTable">
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+          <ScalarProperty Name="UnitNameCH" ColumnName="UnitNameCH" />
+          <ScalarProperty Name="UnitNameEN" ColumnName="UnitNameEN" />
+          <ScalarProperty Name="ChargePerson" ColumnName="ChargePerson" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="UnitAddress" ColumnName="UnitAddress" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="UnitIntro" ColumnName="UnitIntro" />
+          <ScalarProperty Name="TeacherNum" ColumnName="TeacherNum" />
+          <ScalarProperty Name="StuNum" ColumnName="StuNum" />
+          <ScalarProperty Name="Gradu2015Num" ColumnName="Gradu2015Num" />
+          <ScalarProperty Name="SeniorTitleNum" ColumnName="SeniorTitleNum" />
+          <ScalarProperty Name="IntermediateTitleNum" ColumnName="IntermediateTitleNum" />
+          <ScalarProperty Name="OtherTitleNum" ColumnName="OtherTitleNum" />
+          <ScalarProperty Name="TechTeacherNum" ColumnName="TechTeacherNum" />
+          <ScalarProperty Name="AuthTechTeacherNum" ColumnName="AuthTechTeacherNum" />
+          <ScalarProperty Name="EngineRoomArea" ColumnName="EngineRoomArea" />
+          <ScalarProperty Name="ComputerNumConfig" ColumnName="ComputerNumConfig" />
+          <ScalarProperty Name="RecordTime" ColumnName="RecordTime" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="IsPass" ColumnName="IsPass" />
+          <ScalarProperty Name="input1" ColumnName="input1" />
+          <ScalarProperty Name="input2" ColumnName="input2" />
+          <ScalarProperty Name="input3" ColumnName="input3" />
+          <ScalarProperty Name="input4" ColumnName="input4" />
+          <ScalarProperty Name="input5" ColumnName="input5" />
+          <ScalarProperty Name="input6" ColumnName="input6" />
+          <ScalarProperty Name="input7" ColumnName="input7" />
+          <ScalarProperty Name="input8" ColumnName="input8" />
+          <ScalarProperty Name="input9" ColumnName="input9" />
+          <ScalarProperty Name="input10" ColumnName="input10" />
+          <ScalarProperty Name="input11" ColumnName="input11" />
+          <ScalarProperty Name="input12" ColumnName="input12" />
+          <ScalarProperty Name="input13" ColumnName="input13" />
+          <ScalarProperty Name="input14" ColumnName="input14" />
+          <ScalarProperty Name="input15" ColumnName="input15" />
+          <ScalarProperty Name="input16" ColumnName="input16" />
+          <ScalarProperty Name="input17" ColumnName="input17" />
+          <ScalarProperty Name="input18" ColumnName="input18" />
+          <ScalarProperty Name="input19" ColumnName="input19" />
+          <ScalarProperty Name="input20" ColumnName="input20" />
+          <ScalarProperty Name="input21" ColumnName="input21" />
+          <ScalarProperty Name="input22" ColumnName="input22" />
+          <ScalarProperty Name="input23" ColumnName="input23" />
+          <ScalarProperty Name="input24" ColumnName="input24" />
+          <ScalarProperty Name="input25" ColumnName="input25" />
+          <ScalarProperty Name="input26" ColumnName="input26" />
+          <ScalarProperty Name="input27" ColumnName="input27" />
+          <ScalarProperty Name="input28" ColumnName="input28" />
+          <ScalarProperty Name="input29" ColumnName="input29" />
+          <ScalarProperty Name="input30" ColumnName="input30" />
+          <ScalarProperty Name="input31" ColumnName="input31" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_City">
+      <EntityTypeMapping TypeName="CoursePlatformModel.Tb_City">
+        <MappingFragment StoreEntitySet="Tb_City">
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Upid" ColumnName="Upid" />
+          <ScalarProperty Name="ParentPath" ColumnName="ParentPath" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_FieldTable">
+      <EntityTypeMapping TypeName="CoursePlatformModel.Tb_FieldTable">
+        <MappingFragment StoreEntitySet="Tb_FieldTable">
+          <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="IsUse" ColumnName="IsUse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_ManageUser">
+      <EntityTypeMapping TypeName="CoursePlatformModel.Tb_ManageUser">
+        <MappingFragment StoreEntitySet="Tb_ManageUser">
+          <ScalarProperty Name="ManageUserID" ColumnName="ManageUserID" />
+          <ScalarProperty Name="DeName" ColumnName="DeName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="DetailAddress" ColumnName="DetailAddress" />
+          <ScalarProperty Name="RecordTime" ColumnName="RecordTime" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_SoftCourse">
+      <EntityTypeMapping TypeName="CoursePlatformModel.Tb_SoftCourse">
+        <MappingFragment StoreEntitySet="Tb_SoftCourse">
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="SoftPlatform" ColumnName="SoftPlatform" />
+          <ScalarProperty Name="StuNum" ColumnName="StuNum" />
+          <ScalarProperty Name="ApplyID" ColumnName="ApplyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_SoftList">
+      <EntityTypeMapping TypeName="CoursePlatformModel.Tb_SoftList">
+        <MappingFragment StoreEntitySet="Tb_SoftList">
+          <ScalarProperty Name="SoftID" ColumnName="SoftID" />
+          <ScalarProperty Name="SoftName" ColumnName="SoftName" />
+          <ScalarProperty Name="SoftIntro" ColumnName="SoftIntro" />
+          <ScalarProperty Name="SoftType" ColumnName="SoftType" />
+          <ScalarProperty Name="Contest" ColumnName="Contest" />
+          <ScalarProperty Name="DownLink" ColumnName="DownLink" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_SoftUser">
+      <EntityTypeMapping TypeName="CoursePlatformModel.Tb_SoftUser">
+        <MappingFragment StoreEntitySet="Tb_SoftUser">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tb_StuUser">
+      <EntityTypeMapping TypeName="CoursePlatformModel.Tb_StuUser">
+        <MappingFragment StoreEntitySet="Tb_StuUser">
+          <ScalarProperty Name="StuID" ColumnName="StuID" />
+          <ScalarProperty Name="StuName" ColumnName="StuName" />
+          <ScalarProperty Name="StuAge" ColumnName="StuAge" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="DetailAddress" ColumnName="DetailAddress" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="RecordTime" ColumnName="RecordTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

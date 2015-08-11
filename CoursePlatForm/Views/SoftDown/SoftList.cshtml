@@ -69,6 +69,7 @@
 
                                 </tbody>
                             </table>
+                            <input type="hidden" name="hideIDS" id="hideIDS" value="" />
                             <input type="submit" class="btn btn-success" value="提交" />
 
                         </div>
@@ -90,7 +91,32 @@
 
     <script>
         $(function () {
+            //$("input[name='CheckSoft']").click(function () {
+            //    //alert('!!');
+            //    if ($(this).attr("checked") == true)
+            //    {
+            //        alert('1111!!');
+            //        $("#hideIDS").val($("hideIDS").val() + $(this).val()+',');
+            //    }
+            //});
+            var $thisCheckBox;
+            $("input[name='CheckSoft']").each(function () {
+                $thisCheckBox = $(this);
+                $thisCheckBox.bind("click", function () {
+                    //alert($thisCheckBox);
+                    if ($thisCheckBox.attr("checked") == true) {
+                        $("#hideIDS").val($("hideIDS").val() + $(this).val() + ',');
+                    }
+                    //alert('1111');
+                });
+            });
 
+
+            //click(function () {
+            //    if ($thisCheckBox.attr("checked") == true) {
+            //        $("#hideIDS").val($("hideIDS").val() + $(this).val() + ',');
+            //    }
+            //});
         });
     </script>
 }
