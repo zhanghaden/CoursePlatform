@@ -18,6 +18,7 @@
         public string UnitAddress { get; set; }
         public string ZipCode { get; set; }
         public string UnitIntro { get; set; }
+        
         public string TeacherNum { get; set; }
         public string StuNum { get; set; }
         public string Gradu2015Num { get; set; }

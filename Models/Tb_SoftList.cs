@@ -14,6 +14,7 @@
         [Display(Name = "软件名称")]
         public string SoftName { get; set; }
         [Display(Name = "软件简介")]
+        [StringLength(10)]
         public string SoftIntro { get; set; }
         [Display(Name = "软件类型")]
         public string SoftType { get; set; }

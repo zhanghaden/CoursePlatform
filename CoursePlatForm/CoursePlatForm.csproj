@@ -140,8 +140,11 @@
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\CheckAccountAttribute.cs" />
     <Compile Include="Controllers\Designer\bianji\Default1Controller.cs" />
+    <Compile Include="Controllers\SC\SCmainController.cs" />
     <Compile Include="Controllers\SoftDown\AdminSoftManageController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\SoftDown\AdminTableFieldController.cs" />
+    <Compile Include="Controllers\SoftDown\SCController.cs" />
     <Compile Include="Controllers\SoftDown\SoftDownController.cs" />
     <Compile Include="Controllers\User\GeneralUserFunController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3075,6 +3078,13 @@
     <Content Include="Views\SoftDown\备份ApplyDetail.cshtml" />
     <Content Include="Views\SoftDown\副本 EditApplyTable.cshtml" />
     <Content Include="Views\SoftDown\ImportApplyData.cshtml" />
+    <Content Include="Views\AdminTableField\Index.cshtml" />
+    <Content Include="Views\AdminTableField\Create.cshtml" />
+    <Content Include="Views\AdminTableField\Edit.cshtml" />
+    <Content Include="Views\SC\SCpartial.cshtml" />
+    <Content Include="Views\SC\jiben.cshtml" />
+    <Content Include="Views\SCmain\Index.cshtml" />
+    <Content Include="Views\SC\jiben2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

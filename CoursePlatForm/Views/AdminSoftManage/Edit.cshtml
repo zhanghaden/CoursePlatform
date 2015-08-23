@@ -6,64 +6,66 @@
 }
 @section  span9{
 
-<h2>编辑</h2>
+    <h2>编辑</h2>
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>软件</legend>
+        <fieldset>
+            <legend>软件</legend>
 
-        @Html.HiddenFor(model => model.SoftID)
+            @Html.HiddenFor(model => model.SoftID)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SoftName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SoftName)
-            @Html.ValidationMessageFor(model => model.SoftName)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SoftName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SoftName)
+                @Html.ValidationMessageFor(model => model.SoftName)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SoftIntro)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SoftIntro)
-            @Html.ValidationMessageFor(model => model.SoftIntro)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SoftIntro)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SoftIntro)
+                @Html.ValidationMessageFor(model => model.SoftIntro)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SoftType)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SoftType)
-            @Html.ValidationMessageFor(model => model.SoftType)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SoftType)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SoftType)
+                @Html.ValidationMessageFor(model => model.SoftType)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Contest)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Contest)
-            @Html.ValidationMessageFor(model => model.Contest)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Contest)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Contest)
+                @Html.ValidationMessageFor(model => model.Contest)
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DownLink)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DownLink)
-            @Html.ValidationMessageFor(model => model.DownLink)
-        </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DownLink)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DownLink)
+                @Html.ValidationMessageFor(model => model.DownLink)
+            </div>
 
-        <p>
-            <input type="submit" value="提交" />
-        </p><div>
-    @Html.ActionLink("回到列表", "Index")
-</div>
-    </fieldset>
-}
+            <p>
+                <input type="submit" value="提交" />
+            </p>
+            <div>
+                @Html.ActionLink("回到列表", "Index")
+            </div>
+        </fieldset>
+    }
 
 
 

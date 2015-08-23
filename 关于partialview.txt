@@ -1,0 +1,2 @@
+Controller   SC下的SCmain
+view    SC文件夹下的jiben   jiben2   SCpartial

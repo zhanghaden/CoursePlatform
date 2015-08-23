@@ -144,8 +144,10 @@ namespace CoursePlatForm.Controllers
                 applySoftListModel.ApplyNum = int.Parse(form["ApplyNum&" + item].ToString());
                 applySoftListModel.SoftID = int.Parse(item);
                 applySoftListModel.ApplyID = int.Parse(Session["ApplyID"].ToString());
-                mHelp.Add<Tb_ApplySoftList>(applySoftListModel);
+                db.Tb_ApplySoftList.Add(applySoftListModel);
+                //mHelp.Add<Tb_ApplySoftList>(applySoftListModel);
             }
+            db.SaveChanges();
             return View("AddSoftCourse");
         }
 
@@ -384,10 +386,11 @@ namespace CoursePlatForm.Controllers
 
         public ActionResult DeleteApplySoftList(int id)
         {
-            Tb_ApplySoftList tb_applysoftlist = db.Tb_ApplySoftList.Find(id);
-            db.Tb_ApplySoftList.Remove(tb_applysoftlist);
+            Tb_ApplySoftList entity = new Tb_ApplySoftList { ApplySoftID = id };
+            db.Set<Tb_ApplySoftList>().Attach(entity);
+            db.Entry<Tb_ApplySoftList>(entity).State = EntityState.Deleted;
             db.SaveChanges();
-            return RedirectToAction("ApplyedSoftList", new { id = tb_applysoftlist.ApplyID });
+            return RedirectToAction("ApplyedSoftList", new { id = id });
         }
         #endregion
 
@@ -654,7 +657,7 @@ namespace CoursePlatForm.Controllers
                     return View();
             }
             return View();
-            
+
         }
 
         #endregion
@@ -766,6 +769,7 @@ namespace CoursePlatForm.Controllers
         }
 
     }
+
 
 
 }

@@ -1,0 +1,47 @@
+﻿@model Models.Tb_FieldTable
+
+@{
+    ViewBag.Title = "新建字段";
+    Layout = "~/Views/Shared/SoftDownAdmin_Layout.cshtml";
+}
+@section  span9{
+    <h2>新建新的字段</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>字段新建</legend>
+
+            @Html.HiddenFor(model => model.FieldID)
+            @Html.HiddenFor(model => model.FieldName)
+            
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DisplayName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DisplayName)
+                @Html.ValidationMessageFor(model => model.DisplayName)
+            </div>
+
+            <p>
+                <input type="submit" value="提交" />
+            </p>
+            <div>
+                @Html.ActionLink("回到列表", "Index")
+            </div>
+        </fieldset>
+    }
+
+
+}
+@section booterScript{
+
+    <script src="~/Content/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/DT_bootstrap.js"></script>
+
+    <script src="~/Content/assets/scripts.js"></script>
+}
