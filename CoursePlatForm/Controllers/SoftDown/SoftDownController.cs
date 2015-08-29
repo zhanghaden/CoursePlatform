@@ -12,7 +12,6 @@ using System.Data;
 using System.Data.SqlClient;
 using CoursePlatForm.Common;
 using System.IO;
-using CourseCenter.Common;
 
 namespace CoursePlatForm.Controllers
 {
@@ -176,6 +175,7 @@ namespace CoursePlatForm.Controllers
         public ActionResult AddSoftCourse(FormCollection form)
         {
             string[] keys = form.AllKeys;
+            
             if (form["CourseName&1"] != "" && form["CourseName&1"] != null)
             {
                 for (int i = 1; i <= 20; i++)//默认只能有二十门课程

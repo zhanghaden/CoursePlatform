@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 
 
 namespace Models
@@ -20,6 +21,8 @@ namespace Models
         public DbSet<Tb_StuUser> Tb_StuUser { get; set; }
         public DbSet<Tb_ManageUser> Tb_ManageUser { get; set; }
         public DbSet<Tb_City> Tb_City { get; set; }
+        public DbSet<Tb_Resource> Tb_Resource { get; set; }
+        public DbSet<Tb_ResourceType> Tb_ResourceType { get; set; }
 
         //第一次请求时 会根据数据库连接字符串 和model 创建数据库
         public DBEntities()
@@ -29,10 +32,13 @@ namespace Models
             //Database.SetInitializer<DBEntities>(new DropCreateDatabaseIfModelChanges<DBEntities>());
         }
 
+
+
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{
         //    base.OnModelCreating(modelBuilder);
         //}
 
     }
+
 }

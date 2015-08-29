@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "TestUpFile";
+    Layout = "~/Views/Shared/SoftDownAdmin_Layout.cshtml";
+}
+@section span9{
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <h2>TestUpFile</h2>
+    <form class="form-horizontal" action="/ResourceManage/TestUpFile" method="post" >
+        @{Html.RenderAction("UCFileUpload", "ResourceManageControl");}
+        <input type="submit" value="提交" />
+    </form>
+}
+@section booterScript{
+    
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/DT_bootstrap.js"></script>
+    <script src="~/Content/assets/scripts.js"></script>
+
+}

@@ -175,6 +175,10 @@ D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\bin\zh-Hans\System.Web.Ra
 D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\bin\zh-Hans\System.Web.WebPages.resources.dll
 D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
-D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\obj\Debug\CoursePlatForm.csprojResolveAssemblyReference.cache
 D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\obj\Debug\CoursePlatForm.dll
 D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\obj\Debug\CoursePlatForm.pdb
+D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\bin\CommonLibrary.dll
+D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\obj\Debug\CoursePlatForm.csproj.ResolveComReference.cache
+D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\bin\FluentScheduler.dll
+D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\bin\FluentScheduler.pdb
+D:\CoursePlatform\CoursePlatformdevelop\CoursePlatForm\obj\Debug\CoursePlatForm.csprojResolveAssemblyReference.cache

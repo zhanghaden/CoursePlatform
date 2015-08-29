@@ -1,0 +1,71 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@using Models;
+@model PagedList<Tb_SoftList>
+@{
+    ViewBag.Title = "ResourceListAndFilter";
+    Layout = "~/Views/Shared/SoftDownAdmin_Layout.cshtml";
+}
+
+@section span9{
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <div style="width: 70%; float: left;">
+        <h2>ResourceListAndFilter</h2>
+
+        <div class="select_nav">
+            <div class="wrap">
+                <div class="container-fluid">
+                    <ul class="select">
+                        <li class="select-list">
+                            <dl id="select1">
+                                <dt>类型分类：</dt>
+                                <dd class="select-all selected"><a href="#">全部</a></dd>
+                                <dd><a href="#">图片</a></dd>
+                                <dd><a href="#">音频</a></dd>
+                                <dd><a href="#">视频</a></dd>
+                                <dd><a href="#"></a></dd>
+                            </dl>
+                        </li>
+                        <li class="select-list">
+                            <dl id="select2">
+                                <dt>课程类型：</dt>
+                                <dd class="select-all selected"><a href="#">全部</a></dd>
+                                <dd><a href="#">精品课程</a></dd>
+                                <dd><a href="#">专栏课程</a></dd>
+                                <dd><a href="#">优秀课题赏析</a></dd>
+                                <dd><a href="#">名师课程</a></dd>
+                                <dd><a href="#">预览课程</a></dd>
+                            </dl>
+                        </li>
+                        <li class="select-list">
+                            <dl id="select3">
+                                <dt>STEM分类：</dt>
+                                <dd class="select-all selected"><a href="#">全部</a></dd>
+                                <dd><a href="#">科学</a></dd>
+                                <dd><a href="#">技术</a></dd>
+                                <dd><a href="#">工程</a></dd>
+                                <dd><a href="#">数学</a></dd>
+                            </dl>
+                        </li>
+                        <li class="select-result">
+                            <dl>
+                                <dt>已选条件：</dt>
+                                <dd class="select-no">暂时没有选择过滤条件</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @{Html.RenderAction("UCResourceListAndFilter", "ResourceManageControl",new{ category = "company"}); }
+
+    </div>
+}
+@section booterScript{
+
+    <script src="~/Content/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="~/Content/CenterUI/StudentUI.js"></script>
+
+}

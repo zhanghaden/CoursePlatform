@@ -39,11 +39,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonClassLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CommonClassLibrary\bin\Debug\CommonClassLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonLibrary">
+      <HintPath>..\..\CoursePlatform\CommonClassLibrary\bin\Debug\CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentScheduler">
+      <HintPath>..\packages\FluentScheduler.3.1.45\lib\net40\FluentScheduler.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Models">
+      <HintPath>..\Models\bin\Debug\Models.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcPager, Version=1.5.0.17702, Culture=neutral, PublicKeyToken=f6872c5a09aed72c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MvcPager.dll</HintPath>
+    </Reference>
     <Reference Include="NPOI, Version=1.2.4.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\NPOI.dll</HintPath>
@@ -136,17 +153,23 @@
     <Compile Include="Common\GenerateUser.cs" />
     <Compile Include="Common\Log4NetHelper.cs" />
     <Compile Include="Common\NPOIHelper.cs" />
+    <Compile Include="Common\Office2Pdf.cs" />
+    <Compile Include="Common\Pdf2Swf.cs" />
     <Compile Include="Common\UpLoad.cs" />
     <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\CheckAccountAttribute.cs" />
     <Compile Include="Controllers\Designer\bianji\Default1Controller.cs" />
-    <Compile Include="Controllers\SC\SCmainController.cs" />
+    <Compile Include="Controllers\ResourceManageController.cs" />
     <Compile Include="Controllers\SoftDown\AdminSoftManageController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\SoftDown\AdminTableFieldController.cs" />
     <Compile Include="Controllers\SoftDown\SCController.cs" />
     <Compile Include="Controllers\SoftDown\SoftDownController.cs" />
+    <Compile Include="Controllers\testofficeController.cs" />
+    <Compile Include="Controllers\Universal.cs" />
     <Compile Include="Controllers\User\GeneralUserFunController.cs" />
+    <Compile Include="Controllers\UserControls\CourseManageControlController.cs" />
+    <Compile Include="Controllers\UserControls\ResourceManageControlController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,11 +177,47 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\log4net.dll" />
+    <Content Include="bin\MvcPager.dll" />
     <Content Include="bin\NPOI.dll" />
     <Content Include="Content\assets\DT_bootstrap.css" />
     <Content Include="Content\assets\DT_bootstrap.js" />
     <Content Include="Content\assets\form-validation.js" />
+    <Content Include="Content\assets\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\assets\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\assets\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\assets\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\assets\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\assets\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\assets\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\assets\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\assets\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\assets\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\assets\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\assets\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\assets\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\assets\jquery-ui-1.8.1.custom.css" />
+    <Content Include="Content\assets\jquery.fileupload-ui.css" />
+    <Content Include="Content\assets\themes\redmond\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-bg_flat_55_fbec88_40x100.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-bg_glass_75_d0e5f5_1x400.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-bg_glass_85_dfeffc_1x400.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-bg_inset-hard_100_f5f8f9_1x100.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-icons_217bc0_256x240.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-icons_469bdd_256x240.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-icons_6da8d5_256x240.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\assets\themes\redmond\images\ui-icons_f9bd01_256x240.png" />
+    <Content Include="Content\assets\themes\redmond\jquery-ui-1.8.1.custom.css" />
+    <Content Include="Content\assets\themes\ui.jqgrid.css" />
+    <Content Include="Content\assets\themes\ui.multiselect.css" />
+    <Content Include="Scripts\jquery-ui-1.8.1.custom.min.js" />
+    <Content Include="Content\assets\jquery.fileupload.css" />
+    <Content Include="Content\assets\jquery.multifile.min.css" />
     <Content Include="Content\assets\scripts.js" />
+    <Content Include="Content\assets\select.css" />
     <Content Include="Content\assets\styles.css" />
     <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap\css\bootstrap-responsive.min.css" />
@@ -213,6 +272,8 @@
     <Content Include="Content\images\flist2.png" />
     <Content Include="Content\images\group.png" />
     <Content Include="Content\images\guess.png" />
+    <Content Include="Content\images\icon-item.png" />
+    <Content Include="Content\images\icon-remove-item.png" />
     <Content Include="Content\images\li_bg.png" />
     <Content Include="Content\images\li_bg2.png" />
     <Content Include="Content\images\li_stbg.png" />
@@ -331,6 +392,10 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\uplodify\jquery.uploadify.min.js" />
+    <Content Include="Content\uplodify\uploadify-cancel.png" />
+    <Content Include="Content\uplodify\uploadify.css" />
+    <Content Include="Content\uplodify\uploadify.swf" />
     <Content Include="Content\vendors\bootstrap-datepicker.js" />
     <Content Include="Content\vendors\bootstrap-wysihtml5\dist\bootstrap-wysihtml5-0.0.2.css" />
     <Content Include="Content\vendors\bootstrap-wysihtml5\dist\bootstrap-wysihtml5-0.0.2.js" />
@@ -1400,6 +1465,12 @@
     <Content Include="Content\vendors\wysiwyg\bootstrap-wysihtml5.css" />
     <Content Include="Content\vendors\wysiwyg\bootstrap-wysihtml5.js" />
     <Content Include="Content\vendors\wysiwyg\wysihtml5-0.3.0.js" />
+    <Content Include="FlexPaper\FlexPaperViewer.swf" />
+    <Content Include="FlexPaper\gif2swf.exe" />
+    <Content Include="FlexPaper\jpeg2swf.exe" />
+    <Content Include="FlexPaper\pdf2swf.exe" />
+    <Content Include="FlexPaper\playerProductInstall.swf" />
+    <Content Include="FlexPaper\png2swf.exe" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Teacher\.gitignore" />
@@ -1506,12 +1577,20 @@
     <Content Include="Content\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.ttf" />
     <Content Include="Content\vendors\tinymce\js\tinymce\skins\lightgray\fonts\icomoon.woff" />
     <Content Include="Content\vendors\tinymce\js\tinymce\skins\lightgray\fonts\readme.md" />
+    <Content Include="ExcelFile\23-37-44.docx" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\flexpaper_flash.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.fileupload-ui.js" />
+    <Content Include="Scripts\jquery.fileupload-uix.js" />
+    <Content Include="Scripts\jquery.fileupload.js" />
+    <Content Include="Scripts\jquery.iframe-transport.js" />
+    <Content Include="Scripts\jquery.multifile.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -1521,6 +1600,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\select.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="static-html\assets\DT_bootstrap.css" />
     <Content Include="static-html\assets\DT_bootstrap.js" />
@@ -3083,28 +3163,72 @@
     <Content Include="Views\AdminTableField\Edit.cshtml" />
     <Content Include="Views\SC\SCpartial.cshtml" />
     <Content Include="Views\SC\jiben.cshtml" />
-    <Content Include="Views\SCmain\Index.cshtml" />
     <Content Include="Views\SC\jiben2.cshtml" />
+    <Content Include="Views\CourseManageControl\CityDynamic.cshtml" />
+    <Content Include="Views\ResourceManageControl\UCResourceListAndFilter.cshtml" />
+    <Content Include="Views\ResourceManage\ResourceListAndFilter.cshtml" />
+    <Content Include="Views\testoffice\testoffice.cshtml" />
+    <Content Include="Views\testoffice\Index.cshtml" />
+    <Content Include="Views\ResourceManageControl\UCSwfDisplay.cshtml" />
+    <Content Include="Views\ResourceManageControl\UCFileUpload.cshtml" />
+    <Content Include="Views\ResourceManage\TestUpFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ExcelFile\" />
+    <Folder Include="Controllers\TeacherTest\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommonClassLibrary\CommonClassLibrary.csproj">
-      <Project>{d44dfd68-5376-49f8-8359-f9b9ec4af37e}</Project>
-      <Name>CommonClassLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{b25f34e9-7592-4742-a7f6-68bbb24bdeeb}</Project>
-      <Name>Models</Name>
-    </ProjectReference>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.PowerPoint">
+      <Guid>{91493440-5A91-11CF-8700-00AA0060263B}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

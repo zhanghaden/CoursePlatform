@@ -22,3 +22,4 @@ D:\CoursePlatform\CoursePlatformdevelop\CommonClassLibrary\bin\Debug\Models.pdb
 D:\CoursePlatform\CoursePlatformdevelop\CommonClassLibrary\obj\Debug\CommonClassLibrary.csprojResolveAssemblyReference.cache
 D:\CoursePlatform\CoursePlatformdevelop\CommonClassLibrary\obj\Debug\CommonClassLibrary.dll
 D:\CoursePlatform\CoursePlatformdevelop\CommonClassLibrary\obj\Debug\CommonClassLibrary.pdb
+D:\CoursePlatform\CoursePlatformdevelop\CommonClassLibrary\obj\Debug\CommonClassLibrary.csproj.ResolveComReference.cache

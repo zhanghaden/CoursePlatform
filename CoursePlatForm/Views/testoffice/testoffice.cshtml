@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "testoffice";
+    Layout = "~/Views/Shared/SoftDownAdmin_Layout.cshtml";
+}
+@section  span9{
+
+    <form class="form-horizontal" action="/testoffice/Index" method="post" enctype="multipart/form-data">
+        上传
+        <input type="file" name="fileExcel" id="fileExcel" value="上传" />
+        <input type="submit" value="提交" />
+    </form>
+}
+@section booterScript{
+
+    <script src="~/Content/vendors/jquery-1.9.1.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/DT_bootstrap.js"></script>
+    <script src="~/Content/assets/scripts.js"></script>
+
+}

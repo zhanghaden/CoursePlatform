@@ -1,0 +1,53 @@
+﻿<select name="area">
+    <option nodeid="1" class="chkip" type1="region">华东</option>
+    <option nodeid="2" class="chkip" type1="region">华南</option>
+    <option nodeid="3" class="chkip" type1="region">西南</option>
+    <option nodeid="4" class="chkip" type1="region">华北</option>
+    <option nodeid="5" class="chkip" type1="region">华中</option>
+    <option nodeid="6" class="chkip" type1="region">东北</option>
+    <option nodeid="7" class="chkip" type1="region">西北</option>
+    <option nodeid="0" class="chkip" type1="region">海外</option>
+    <option nodeid="0" class="chkip" type1="region">其他</option>
+</select>
+<select id="province">
+</select>
+<select id="city">
+</select>
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    $(".chkip").click(function () {
+        //三级联动
+        GetCityList($(this).attr("nodeid"), $(this).attr("type1"));
+    });
+
+    function GetCityList(nodeid, type1) {
+        if (nodeid != "" || nodeid != "0") {
+            var submitData = {
+                nodeid: nodeid,
+                type1: type1,
+                type: "getcity"
+            };
+            $.get("@Url.Action("GetCityList", "CourseManageControl", new { time = DateTime.Now.ToString("yymmddhhMMss") })", submitData,
+            function (data) {
+                if (type1 == "region") {
+                    $("#province").html(data.content);
+                }
+                else if (type1 == "province") {
+                    $("#city").html(data.content);
+                }
+                else if (type1 == "city") {
+                    $("#area").html(data.content);
+                }
+                $('.chkip').unbind("click");
+                $(".chkip").click(function () {
+                    //三级联动
+                    GetCityList($(this).attr("nodeid"), $(this).attr("type1"));
+                });
+                
+            },
+            "json")
+        }
+    }
+
+</script>

@@ -53,16 +53,28 @@
     <Compile Include="XMLHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\CommonLibrary.dll" />
+    <Content Include="bin\Interop.jmail.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\base.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{b25f34e9-7592-4742-a7f6-68bbb24bdeeb}</Project>
       <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\CommonLibrary.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="xml\base.config" />
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
