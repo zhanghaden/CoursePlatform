@@ -42,7 +42,8 @@ namespace CoursePlatForm.Controllers
             
             return View();
         }
-
+        //
+        //用于执行上传文件时的ajax操作，生成一条资源信息，存储资源并转换
         public void ajaxUpFile()
         {
             HttpFileCollectionBase hfc = Request.Files;

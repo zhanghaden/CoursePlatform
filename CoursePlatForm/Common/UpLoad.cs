@@ -47,11 +47,11 @@ namespace CoursePlatForm.Common
                     {
                         Directory.CreateDirectory(BasePath + "origin\\");
                     }
-                    else if (!Directory.Exists(BasePath + "PDF\\"))
+                    if (!Directory.Exists(BasePath + "PDF\\"))
                     {
                         Directory.CreateDirectory(BasePath + "PDF\\");
                     }
-                    else if (!Directory.Exists(BasePath + "swf\\"))
+                    if (!Directory.Exists(BasePath + "swf\\"))
                     {
                         Directory.CreateDirectory(BasePath + "swf\\");
                     }
@@ -62,6 +62,7 @@ namespace CoursePlatForm.Common
                     string pdfpath;
                     string swfpath;
                     string fileName;
+                    string strType = "";
                     HttpPostedFileBase hpf = hfc[0];
                     string extension = Path.GetExtension(hpf.FileName).ToLower();
                     if (extension != ".mp4" && extension != ".wmv" && extension != ".avi" && extension != ".rmvb" && extension != ".mov" && extension != ".mpeg" && extension != ".mpg" && extension != ".qt" && extension != ".ram" && extension != ".ram" && extension != ".asf")//如果是视频文件，禁止上传
@@ -89,7 +90,32 @@ namespace CoursePlatForm.Common
                                         model.ResourcePath = BasePath;
                                         model.RecordTime = DateTime.Now;
                                         model.ResourceName = name;
-                                        model.IsConvertFinish = false;
+                                        
+                                        //下面判断是哪种office文件后执行转换操作
+                                        if (extension == ".doc" || extension == ".docx")
+                                        {
+                                            strType = "Word";
+                                            Office2Pdf.DOCConvertToPDF(BasePath, pdfpath);
+                                            Pdf2Swf.PDFToSWF(pdfpath, swfpath);
+                                        }
+                                        else if (extension == ".ppt" || extension == ".pptx")
+                                        {
+                                            strType = "PPT";
+                                            Office2Pdf.PPTConvertToPDF(BasePath, pdfpath);
+                                            Pdf2Swf.PDFToSWF(pdfpath, swfpath);
+                                        }
+                                        else if (extension == ".xls" || extension == ".xlsx")
+                                        {
+                                            strType = "Excel";
+                                            Office2Pdf.XLSConvertToPDF(BasePath, pdfpath);
+                                            Pdf2Swf.PDFToSWF(pdfpath, swfpath);
+                                        }
+                                        else if (extension == ".pdf")
+                                        {
+                                            strType = "PDF";
+                                            Pdf2Swf.PDFToSWF(BasePath, swfpath);
+                                        }
+                                        model.IsConvertFinish = true;
                                     }
                                     else//如果不是office文件，不用经过转换，直接存储
                                     {
@@ -101,41 +127,15 @@ namespace CoursePlatForm.Common
                                         model.RecordTime = DateTime.Now;
                                         model.ResourceName = name;
                                         model.IsConvertFinish = false;
+                                        strType = extension.Substring(extension.IndexOf('.')+1);
                                     }
-
-
-                                    //todo  要在循环内添加数据库条目
-
-                                    #region 用于判断并获得资源类型ID，这里的类型包括所有类型
-                                    string strType = "";
-                                    if (extension == ".doc" || extension == ".docx")
-                                    {
-                                        strType = "Word";
-                                    }
-                                    else if (extension == ".ppt" || extension == ".pptx")
-                                    {
-                                        strType = "PPT";
-                                    }
-                                    else if (extension == ".xls" || extension == ".xlsx")
-                                    {
-                                        strType = "Excel";
-                                    }
-                                    else if (extension == ".pdf")
-                                    {
-                                        strType = "PDF";
-                                    }
-                                    else
-                                    {
-                                        strType = extension;
-                                    }
-                                    //统一获取资源类型并赋值给model
                                     modelType = (Tb_ResourceType)mhelp.GetModelBy<Tb_ResourceType>(m => m.ResourceType == strType);
+
                                     if (modelType != null)
                                     {
                                         model.ResourceTypeID = modelType.ResourceTypeID;
                                     }
 
-                                    #endregion
                                     return model;
                                 }
                             }
