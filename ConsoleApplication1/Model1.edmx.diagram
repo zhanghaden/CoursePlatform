@@ -17,6 +17,7 @@
         <EntityTypeShape EntityType="CoursePlatformModel.Tb_SoftList" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CoursePlatformModel.Tb_SoftUser" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CoursePlatformModel.Tb_StuUser" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CoursePlatformModel.View_Resource_ResourceType" Width="1.5" PointX="13.375" PointY="2" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

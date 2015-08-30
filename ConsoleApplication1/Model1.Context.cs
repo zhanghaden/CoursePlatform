@@ -37,5 +37,6 @@ namespace ConsoleApplication1
         public DbSet<Tb_SoftList> Tb_SoftList { get; set; }
         public DbSet<Tb_SoftUser> Tb_SoftUser { get; set; }
         public DbSet<Tb_StuUser> Tb_StuUser { get; set; }
+        public DbSet<View_Resource_ResourceType> View_Resource_ResourceType { get; set; }
     }
 }

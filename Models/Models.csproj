@@ -63,6 +63,7 @@
     <Compile Include="Tb_StuUser.cs" />
     <Compile Include="Tb_FieldTable.cs" />
     <Compile Include="Tb_Resource.cs" />
+    <Compile Include="Resource_View_ResourceType.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CoursePlatformModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CoursePlatformModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="CoursePlatformModelStoreContainer">
           <EntitySet Name="Tb_ApplySoftList" EntityType="CoursePlatformModel.Store.Tb_ApplySoftList" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Tb_ApplyTable" EntityType="CoursePlatformModel.Store.Tb_ApplyTable" store:Type="Tables" Schema="dbo" />
@@ -25,6 +25,22 @@
           <EntitySet Name="Tb_SoftList" EntityType="CoursePlatformModel.Store.Tb_SoftList" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Tb_SoftUser" EntityType="CoursePlatformModel.Store.Tb_SoftUser" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Tb_StuUser" EntityType="CoursePlatformModel.Store.Tb_StuUser" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="View_Resource_ResourceType" EntityType="CoursePlatformModel.Store.View_Resource_ResourceType" store:Type="Views" store:Schema="dbo" store:Name="View_Resource_ResourceType">
+            <DefiningQuery>SELECT 
+      [View_Resource_ResourceType].[ResourceID] AS [ResourceID], 
+      [View_Resource_ResourceType].[ResourceName] AS [ResourceName], 
+      [View_Resource_ResourceType].[ResourceTypeID] AS [ResourceTypeID], 
+      [View_Resource_ResourceType].[ResourcePath] AS [ResourcePath], 
+      [View_Resource_ResourceType].[IsConvertFinish] AS [IsConvertFinish], 
+      [View_Resource_ResourceType].[PDFPath] AS [PDFPath], 
+      [View_Resource_ResourceType].[swfPath] AS [swfPath], 
+      [View_Resource_ResourceType].[UpUserID] AS [UpUserID], 
+      [View_Resource_ResourceType].[UserType] AS [UserType], 
+      [View_Resource_ResourceType].[RecordTime] AS [RecordTime], 
+      [View_Resource_ResourceType].[ResourceType] AS [ResourceType], 
+      [View_Resource_ResourceType].[ResourceIsDisplay] AS [ResourceIsDisplay]
+      FROM [dbo].[View_Resource_ResourceType] AS [View_Resource_ResourceType]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
         <EntityType Name="Tb_ApplySoftList">
           <Key>
@@ -142,7 +158,8 @@
           <Property Name="Age" Type="int" />
           <Property Name="Account" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="CityID" Type="int" Nullable="false" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="ProvinceID" Type="int" />
           <Property Name="DetailAddress" Type="varchar" MaxLength="150" />
           <Property Name="RecordTime" Type="datetime" Nullable="false" />
           <Property Name="Birthday" Type="datetime" />
@@ -164,7 +181,7 @@
           <Property Name="IsConvertFinish" Type="bit" Nullable="false" />
           <Property Name="PDFPath" Type="varchar(max)" />
           <Property Name="swfPath" Type="varchar(max)" />
-          <Property Name="UpUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UpUserID" Type="uniqueidentifier" />
           <Property Name="UserType" Type="nchar" MaxLength="10" />
           <Property Name="RecordTime" Type="datetime" Nullable="false" />
         </EntityType>
@@ -215,7 +232,11 @@
           <Property Name="StuAge" Type="int" />
           <Property Name="Account" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="CityID" Type="int" Nullable="false" />
+          <Property Name="ClassName" Type="varchar" MaxLength="20" />
+          <Property Name="SchoolName" Type="varchar" MaxLength="50" />
+          <Property Name="GradeName" Type="varchar" MaxLength="20" />
+          <Property Name="CityID" Type="int" />
+          <Property Name="ProvinceID" Type="int" />
           <Property Name="DetailAddress" Type="varchar" MaxLength="150" />
           <Property Name="Birthday" Type="datetime" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
@@ -225,8 +246,33 @@
           <Property Name="PostCode" Type="varchar" MaxLength="50" />
           <Property Name="RecordTime" Type="datetime" Nullable="false" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“CoursePlatform.dbo.View_Resource_ResourceType”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="View_Resource_ResourceType">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="ResourceName" />
+            <PropertyRef Name="ResourceTypeID" />
+            <PropertyRef Name="ResourcePath" />
+            <PropertyRef Name="IsConvertFinish" />
+            <PropertyRef Name="RecordTime" />
+            <PropertyRef Name="ResourceIsDisplay" />
+          </Key>
+          <Property Name="ResourceID" Type="int" Nullable="false" />
+          <Property Name="ResourceName" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="ResourceTypeID" Type="int" Nullable="false" />
+          <Property Name="ResourcePath" Type="varchar(max)" Nullable="false" />
+          <Property Name="IsConvertFinish" Type="bit" Nullable="false" />
+          <Property Name="PDFPath" Type="varchar(max)" />
+          <Property Name="swfPath" Type="varchar(max)" />
+          <Property Name="UpUserID" Type="uniqueidentifier" />
+          <Property Name="UserType" Type="nchar" MaxLength="10" />
+          <Property Name="RecordTime" Type="datetime" Nullable="false" />
+          <Property Name="ResourceType" Type="varchar" MaxLength="50" />
+          <Property Name="ResourceIsDisplay" Type="bit" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CoursePlatformModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -243,6 +289,7 @@
           <EntitySet Name="Tb_SoftList" EntityType="CoursePlatformModel.Tb_SoftList" />
           <EntitySet Name="Tb_SoftUser" EntityType="CoursePlatformModel.Tb_SoftUser" />
           <EntitySet Name="Tb_StuUser" EntityType="CoursePlatformModel.Tb_StuUser" />
+          <EntitySet Name="View_Resource_ResourceType" EntityType="CoursePlatformModel.View_Resource_ResourceType" />
         </EntityContainer>
         <EntityType Name="Tb_ApplySoftList">
           <Key>
@@ -357,7 +404,7 @@
           <Property Name="Age" Type="Int32" />
           <Property Name="Account" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <Property Name="CityID" Type="Int32" />
           <Property Name="DetailAddress" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
           <Property Name="RecordTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Birthday" Type="DateTime" Precision="3" />
@@ -367,6 +414,7 @@
           <Property Name="CompanyName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
           <Property Name="PostCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="UserType" Type="Int32" Nullable="false" />
+          <Property Type="Int32" Name="ProvinceID" />
         </EntityType>
         <EntityType Name="Tb_Resource">
           <Key>
@@ -379,7 +427,7 @@
           <Property Name="IsConvertFinish" Type="Boolean" Nullable="false" />
           <Property Name="PDFPath" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="swfPath" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="UpUserID" Type="Guid" Nullable="false" />
+          <Property Name="UpUserID" Type="Guid" />
           <Property Name="UserType" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
           <Property Name="RecordTime" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
@@ -430,7 +478,7 @@
           <Property Name="StuAge" Type="Int32" />
           <Property Name="Account" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <Property Name="CityID" Type="Int32" />
           <Property Name="DetailAddress" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
           <Property Name="Birthday" Type="DateTime" Precision="3" />
           <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -439,6 +487,33 @@
           <Property Name="CompanyName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
           <Property Name="PostCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="RecordTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Type="String" Name="ClassName" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SchoolName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="GradeName" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ProvinceID" />
+        </EntityType>
+        <EntityType Name="View_Resource_ResourceType">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+            <PropertyRef Name="ResourceName" />
+            <PropertyRef Name="ResourceTypeID" />
+            <PropertyRef Name="ResourcePath" />
+            <PropertyRef Name="IsConvertFinish" />
+            <PropertyRef Name="RecordTime" />
+            <PropertyRef Name="ResourceIsDisplay" />
+          </Key>
+          <Property Type="Int32" Name="ResourceID" Nullable="false" />
+          <Property Type="String" Name="ResourceName" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ResourceTypeID" Nullable="false" />
+          <Property Type="String" Name="ResourcePath" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsConvertFinish" Nullable="false" />
+          <Property Type="String" Name="PDFPath" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="swfPath" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Guid" Name="UpUserID" />
+          <Property Type="String" Name="UserType" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="RecordTime" Nullable="false" Precision="3" />
+          <Property Type="String" Name="ResourceType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ResourceIsDisplay" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -557,6 +632,7 @@
           <EntitySetMapping Name="Tb_ManageUser">
             <EntityTypeMapping TypeName="CoursePlatformModel.Tb_ManageUser">
               <MappingFragment StoreEntitySet="Tb_ManageUser">
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
                 <ScalarProperty Name="ManageUserID" ColumnName="ManageUserID" />
                 <ScalarProperty Name="DeName" ColumnName="DeName" />
                 <ScalarProperty Name="Age" ColumnName="Age" />
@@ -636,6 +712,10 @@
           <EntitySetMapping Name="Tb_StuUser">
             <EntityTypeMapping TypeName="CoursePlatformModel.Tb_StuUser">
               <MappingFragment StoreEntitySet="Tb_StuUser">
+                <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
                 <ScalarProperty Name="StuID" ColumnName="StuID" />
                 <ScalarProperty Name="StuName" ColumnName="StuName" />
                 <ScalarProperty Name="StuAge" ColumnName="StuAge" />
@@ -650,6 +730,24 @@
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
                 <ScalarProperty Name="PostCode" ColumnName="PostCode" />
                 <ScalarProperty Name="RecordTime" ColumnName="RecordTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Resource_ResourceType">
+            <EntityTypeMapping TypeName="CoursePlatformModel.View_Resource_ResourceType">
+              <MappingFragment StoreEntitySet="View_Resource_ResourceType">
+                <ScalarProperty Name="ResourceIsDisplay" ColumnName="ResourceIsDisplay" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="RecordTime" ColumnName="RecordTime" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="UpUserID" ColumnName="UpUserID" />
+                <ScalarProperty Name="swfPath" ColumnName="swfPath" />
+                <ScalarProperty Name="PDFPath" ColumnName="PDFPath" />
+                <ScalarProperty Name="IsConvertFinish" ColumnName="IsConvertFinish" />
+                <ScalarProperty Name="ResourcePath" ColumnName="ResourcePath" />
+                <ScalarProperty Name="ResourceTypeID" ColumnName="ResourceTypeID" />
+                <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

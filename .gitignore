@@ -42,3 +42,5 @@ ConsoleApplication1
 /ConsoleApplication1/*.config
 /Models/Models.csproj
 Debug
+/Models/DbEntities.cs
+ClassLibrary1
